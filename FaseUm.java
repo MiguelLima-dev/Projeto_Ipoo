@@ -15,5 +15,15 @@ public class FaseUm extends Fase
      */
     public FaseUm()
     {
+        prepare();
+    }
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        Jogador jogador = new Jogador();
+        addObject(jogador,157,418);
     }
 }
