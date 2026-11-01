@@ -44,7 +44,7 @@ public class Fazendeiro extends Actor
 
 
         // velocidade com que o fazendeiro se move
-        vel = 6;
+        vel = 1;
     }
 
     /**
