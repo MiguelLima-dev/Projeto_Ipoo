@@ -31,8 +31,8 @@ public class Entidade extends Actor
  * @param nImagensAndando Numero de imagens da entidade andando
  * @param vel Velocidade com que a entidade se move
  */
-    public Entidade(String prefixoParado, String prefixoAndando,
-                    int nImagensParado, int nImagensAndando, int vel) {
+    public Entidade(String prefixoParado, int nImagensParado,
+                    String prefixoAndando, int nImagensAndando, int vel) {
         // a imagem sera atualizada a cada 6 passos
         passosParaAtualizarImagem = 6;
         passosDesdeUltimaAtualizacaoImagem = 0;
@@ -40,7 +40,7 @@ public class Entidade extends Actor
         // carrega as imagens da entidade parada
         imagensParado = carregarImagens(prefixoParado, nImagensParado);
         // carrega as imagens da entidade parada
-        imagensParado = carregarImagens(prefixoAndando, nImagensAndando);
+        imagensAndando = carregarImagens(prefixoAndando, nImagensAndando);
         // inicia com a primeira imagem da entidade parada
         indiceImagemAtual = 0;
         setImage(imagensParado[indiceImagemAtual]);

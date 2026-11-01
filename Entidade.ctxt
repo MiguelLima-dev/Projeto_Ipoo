@@ -1,10 +1,19 @@
 #BlueJ class context
 comment0.target=Entidade
 comment0.text=\n\ Write\ a\ description\ of\ class\ Entidade\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ Entidade\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-comment2.params=prefixo\ numeroDeImagens
-comment2.target=greenfoot.GreenfootImage[]\ carregarImagens(java.lang.String,\ int)
-comment2.text=\n\ Carrega\ um\ conjunto\ de\ imagens\ no\ formato\:\ prefixo\ (1).png,\ prefixo\ (2).png,\ ...\n
-numComments=3
+comment1.params=prefixoParado\ nImagensParado\ prefixoAndando\ nImagensAndando\ vel
+comment1.target=Entidade(java.lang.String,\ int,\ java.lang.String,\ int,\ int)
+comment1.text=\n\ @param\ prefixoParado\ Prefixo\ das\ imagens\ da\ entidade\ parada\n\ @param\ prefixoAndando\ Prefixo\ das\ imagens\ da\ entidade\ andando\n\ @param\ nImagensParado\ Numero\ de\ imagens\ da\ entidade\ parada\n\ @param\ nImagensAndando\ Numero\ de\ imagens\ da\ entidade\ andando\n\ @param\ vel\ Velocidade\ com\ que\ a\ entidade\ se\ move\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ Entidade\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment3.params=prefixo\ numeroDeImagens
+comment3.target=greenfoot.GreenfootImage[]\ carregarImagens(java.lang.String,\ int)
+comment3.text=\n\ Carrega\ um\ conjunto\ de\ imagens\ no\ formato\:\ prefixo\ (1).png,\ prefixo\ (2).png,\ ...\n
+comment4.params=
+comment4.target=void\ tratarAtualizacaoImagem()
+comment4.text=\n\ Exibe\ a\ proxima\ imagem\ do\ vetor\n
+comment5.params=dx\ dy
+comment5.target=void\ mover(int,\ int)
+comment5.text=\n\ Move\ a\ entidade\ (dx,\ dy),\ parando\ ao\ colidir\ com\ obstaculos.\n\ Cada\ eixo\ eh\ testado\ separadamente,\ entao\ a\ entidade\ desliza\n\ pela\ parade\ ao\ invez\ de\ grudar\ nela.\ Tambem\ atuliza\ o\ estado\n\ "andando",\ trocando\ entre\ as\ animacoes\ de\ parede\ e\ andando.\n\ @param\ dx\ O\ quanto\ a\ entidade\ se\ move\ no\ eixo\ x\n\ @param\ dy\ O\ quanto\ a\ entidade\ se\ move\ no\ eixo\ y\n
+numComments=6
