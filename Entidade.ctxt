@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Entidade
+comment0.text=\n\ Write\ a\ description\ of\ class\ Entidade\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\n\ Act\ -\ do\ whatever\ the\ Entidade\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment2.params=prefixo\ numeroDeImagens
+comment2.target=greenfoot.GreenfootImage[]\ carregarImagens(java.lang.String,\ int)
+comment2.text=\n\ Carrega\ um\ conjunto\ de\ imagens\ no\ formato\:\ prefixo\ (1).png,\ prefixo\ (2).png,\ ...\n
+numComments=3
