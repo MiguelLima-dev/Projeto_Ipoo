@@ -17,4 +17,9 @@ public class TelaInstrucoes extends Tela
     {
         super("telaInstrucoes.png");
     }
+    
+    public void act() {
+        if (Greenfoot.isKeyDown("space"))
+            Greenfoot.setWorld(new FaseUm());
+    }
 }

@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Fazendeiro
+comment0.text=\n\ Write\ a\ description\ of\ class\ Jogador\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Fazendeiro()
+comment1.text=\n\ Cria\ um\ objeto\ fazendeiro\n\ Carrega\ as\ imagens\ e\ define\ a\ imagem\ inicial.\n
+comment2.params=prefixo\ numeroDeImagens
+comment2.target=greenfoot.GreenfootImage[]\ carregarImagens(java.lang.String,\ int)
+comment2.text=\n\ Carrega\ um\ conjunto\ de\ imagens\ no\ formato\:\ prefixo\ (1).png,\ prefixo\ (2).png,\ ...\n
+comment3.params=
+comment3.target=void\ tratarAtualizacaoImagem()
+comment3.text=\n\ Exibe\ a\ proxima\ imagem\ do\ vetor\n
+comment4.params=
+comment4.target=void\ act()
+comment5.params=
+comment5.target=void\ tratarMovimento()
+comment5.text=\n\ Move\ o\ fazendeiro\ conforme\ as\ setas\ do\ teclado.\n
+numComments=6
