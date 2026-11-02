@@ -20,7 +20,7 @@ public class Entidade extends Actor
     // guarda o indice da imagem atual do fazendeiro
     private int indiceImagemAtual;
     // indica quantos passos sao necessarios para atualizar a imagem
-    protected int passosParaAtualizarImagem;
+    private int passosParaAtualizarImagem;
     // indica quantos passos se passaram desde a ultima atualizacao da imagem
     private int passosDesdeUltimaAtualizacaoImagem;
 
@@ -34,7 +34,7 @@ public class Entidade extends Actor
     public Entidade(String prefixoParado, int nImagensParado,
                     String prefixoAndando, int nImagensAndando, int vel) {
         // a imagem sera atualizada a cada 6 passos
-        passosParaAtualizarImagem = 6;
+        passosParaAtualizarImagem = 8;
         passosDesdeUltimaAtualizacaoImagem = 0;
 
         // carrega as imagens da entidade parada
