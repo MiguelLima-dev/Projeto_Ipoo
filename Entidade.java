@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Entidade extends Actor
 {
     // velocidade com que essa entidade se move
-    protected int vel;
+    protected double vel;
     
     // vetor de imagens da entidade parada
     private GreenfootImage[] imagensParado;
@@ -32,7 +32,7 @@ public class Entidade extends Actor
  * @param vel Velocidade com que a entidade se move
  */
     public Entidade(String prefixoParado, int nImagensParado,
-                    String prefixoAndando, int nImagensAndando, int vel) {
+                    String prefixoAndando, int nImagensAndando, double vel) {
         // a imagem sera atualizada a cada 6 passos
         passosParaAtualizarImagem = 8;
         passosDesdeUltimaAtualizacaoImagem = 0;

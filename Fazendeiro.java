@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Fazendeiro extends Entidade
 {
     public Fazendeiro() {
-        // idle: 11 imagens, walk: 9 imagens, velocidade 1
+        // idle: 11 imagens| walk: 9 imagens| velocidade 1
         super("Fazendeiro_idle", 11, "Fazendeiro_walk", 9, 1);
     }
 

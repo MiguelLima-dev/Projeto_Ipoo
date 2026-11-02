@@ -14,7 +14,7 @@ public class FaseUm extends Fase
      * 
      */
     public FaseUm()
-    {   setBackground(new GreenfootImage("faseUm.png"));
+    {
         prepare();
     }
     
@@ -26,5 +26,7 @@ public class FaseUm extends Fase
     {
         Fazendeiro fazendeiro = new Fazendeiro();
         addObject(fazendeiro,163,373);
+        BichoPapao bichoPapao = new BichoPapao();
+        addObject(bichoPapao,575,103);
     }
 }
