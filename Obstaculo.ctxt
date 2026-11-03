@@ -1,7 +1,10 @@
 #BlueJ class context
 comment0.target=Obstaculo
 comment0.text=\n\ Write\ a\ description\ of\ class\ Obstaculo\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ Obstaculo\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-numComments=2
+comment1.params=nomeImagem
+comment1.target=Obstaculo(java.lang.String)
+comment1.text=\n\ Cria\ um\ obstaculo\ com\ uma\ dada\ imagem\n\ @param\ nomeImagem\ nome\ da\ imagem\ do\ obstaculo\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ Obstaculo\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+numComments=3

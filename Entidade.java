@@ -10,7 +10,7 @@ public class Entidade extends Actor
 {
     // velocidade com que essa entidade se move
     protected double vel;
-    
+
     // vetor de imagens da entidade parada
     private GreenfootImage[] imagensParado;
     // vetor de imagens da entidade andando
@@ -24,13 +24,17 @@ public class Entidade extends Actor
     // indica quantos passos se passaram desde a ultima atualizacao da imagem
     private int passosDesdeUltimaAtualizacaoImagem;
 
-/**
- * @param prefixoParado Prefixo das imagens da entidade parada
- * @param prefixoAndando Prefixo das imagens da entidade andando
- * @param nImagensParado Numero de imagens da entidade parada
- * @param nImagensAndando Numero de imagens da entidade andando
- * @param vel Velocidade com que a entidade se move
- */
+    /**
+     * Construtor de uma entidade, recebe o prefixo das imagens da entidade
+     * parada e andando, tambem o numero de imagens de cada tipo de imagem,
+     * recebe tambem a velocidade com que a entidade se move
+     * 
+     * @param prefixoParado Prefixo das imagens da entidade parada
+     * @param nImagensParado Numero de imagens da entidade parada
+     * @param prefixoAndando Prefixo das imagens da entidade andando
+     * @param nImagensAndando Numero de imagens da entidade andando
+     * @param vel Velocidade com que a entidade se move
+     */
     public Entidade(String prefixoParado, int nImagensParado,
                     String prefixoAndando, int nImagensAndando, double vel) {
         // a imagem sera atualizada a cada 6 passos
@@ -49,17 +53,19 @@ public class Entidade extends Actor
         // a velocidade com que a entidade se move
         this.vel = vel;
     }
+
     /**
-     * Act - do whatever the Entidade wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Trata a animacao da entidade a cada frame
      */
     public void act()
     {   
         tratarAtualizacaoImagem();
     }
-    
+
     /**
      * Carrega um conjunto de imagens no formato: prefixo (1).png, prefixo (2).png, ...
+     * @param prefixo prefixo da imagem a ser carregada
+     * @param numeroDeImagens numero de imagens a serem carregadas
      */
     private GreenfootImage[] carregarImagens(String prefixo, int numeroDeImagens) {
         GreenfootImage[] imagens = new GreenfootImage[numeroDeImagens];
@@ -68,15 +74,18 @@ public class Entidade extends Actor
         }
         return imagens;
     }
-    
+
     /**
-     * Exibe a proxima imagem do vetor
+     * Trata a atualizacao das imagens da entidade, levando em consideracao se
+     * a entidade esta parada ou andando
      */
-    private void tratarAtualizacaoImagem++;
+    private void tratarAtualizacaoImagem() {
+        passosDesdeUltimaAtualizacaoImagem++;
 
         if (passosDesdeUltimaAtualizacaoImagem >= passosParaAtualizarImagem) {
             passosDesdeUltimaAtualizacaoImagem = 0;
 
+            // decide qual vetor sera usado, com base no estado da entidade
             GreenfootImage[] imagens;
             if (andando) imagens = imagensAndando;
             else imagens = imagensParado;

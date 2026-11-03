@@ -28,5 +28,7 @@ public class FaseUm extends Fase
         addObject(fazendeiro,163,373);
         BichoPapao bichoPapao = new BichoPapao();
         addObject(bichoPapao,575,103);
+        Obstaculo obstaculo = new Obstaculo("arbusto.png");
+        addObject(obstaculo,285,211);
     }
 }

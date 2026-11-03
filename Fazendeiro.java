@@ -12,7 +12,7 @@ public class Fazendeiro extends Entidade
         // idle: 11 imagens| walk: 9 imagens| velocidade 1
         super("Fazendeiro_idle", 11, "Fazendeiro_walk", 9, 1);
     }
-
+    
     public void act() {
         tratarMovimento();
         super.act();
