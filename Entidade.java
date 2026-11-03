@@ -68,12 +68,11 @@ public class Entidade extends Actor
         }
         return imagens;
     }
-
+    
     /**
      * Exibe a proxima imagem do vetor
      */
-    private void tratarAtualizacaoImagem() {
-        passosDesdeUltimaAtualizacaoImagem++;
+    private void tratarAtualizacaoImagem++;
 
         if (passosDesdeUltimaAtualizacaoImagem >= passosParaAtualizarImagem) {
             passosDesdeUltimaAtualizacaoImagem = 0;
