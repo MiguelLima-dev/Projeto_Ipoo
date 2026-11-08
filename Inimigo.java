@@ -12,7 +12,7 @@ public class Inimigo extends Entidade
     private int dano;
     
     public Inimigo(String prefixoParado, int nImagensParado,
-                   String prefixoAndando, int nImagensAndando, double vel,
+                   String prefixoAndando, int nImagensAndando, int vel,
                    int dano) {
         super(prefixoParado, nImagensParado, prefixoAndando, nImagensAndando, vel);
         this.dano = dano;

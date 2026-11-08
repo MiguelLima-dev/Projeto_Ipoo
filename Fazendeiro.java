@@ -22,7 +22,7 @@ public class Fazendeiro extends Entidade
      * Move o fazendeiro conforme as setas do teclado.
      */
     private void tratarMovimento() {
-        int dx = 0, dy = 0;
+        int dx = 0, dy = 0, vel = obterVel();
         if (Greenfoot.isKeyDown("up")) dy -= vel;
         if (Greenfoot.isKeyDown("down")) dy += vel;
         if (Greenfoot.isKeyDown("left")) dx -= vel;

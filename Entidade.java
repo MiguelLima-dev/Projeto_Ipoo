@@ -2,14 +2,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Entidade here.
- * 
+ *
  * @author (your name) 
  * @version (a version number or a date)
  */
 public class Entidade extends Actor
 {
     // velocidade com que essa entidade se move
-    protected double vel;
+    private int vel;
 
     // vetor de imagens da entidade parada
     private GreenfootImage[] imagensParado;
@@ -20,7 +20,7 @@ public class Entidade extends Actor
     // guarda o indice da imagem atual do fazendeiro
     private int indiceImagemAtual;
     // indica quantos passos sao necessarios para atualizar a imagem
-    private int passosParaAtualizarImagem;
+    private static final int passosParaAtualizarImagem = 8;
     // indica quantos passos se passaram desde a ultima atualizacao da imagem
     private int passosDesdeUltimaAtualizacaoImagem;
 
@@ -28,17 +28,16 @@ public class Entidade extends Actor
      * Construtor de uma entidade, recebe o prefixo das imagens da entidade
      * parada e andando, tambem o numero de imagens de cada tipo de imagem,
      * recebe tambem a velocidade com que a entidade se move
-     * 
+     *
      * @param prefixoParado Prefixo das imagens da entidade parada
      * @param nImagensParado Numero de imagens da entidade parada
      * @param prefixoAndando Prefixo das imagens da entidade andando
      * @param nImagensAndando Numero de imagens da entidade andando
      * @param vel Velocidade com que a entidade se move
      */
-    public Entidade(String prefixoParado, int nImagensParado,
-                    String prefixoAndando, int nImagensAndando, double vel) {
-        // a imagem sera atualizada a cada 6 passos
-        passosParaAtualizarImagem = 8;
+    protected Entidade(String prefixoParado, int nImagensParado,
+                    String prefixoAndando, int nImagensAndando, int vel) {
+        // há quantos passos a imagem foi atualizada
         passosDesdeUltimaAtualizacaoImagem = 0;
 
         // carrega as imagens da entidade parada
@@ -58,14 +57,23 @@ public class Entidade extends Actor
      * Trata a animacao da entidade a cada frame
      */
     public void act()
-    {   
+    {
         tratarAtualizacaoImagem();
+    }
+
+    /**
+     * Retorna a velocidade da entidade
+     * @return a velocidade da entidade
+     */
+    protected int obterVel() {
+        return vel;
     }
 
     /**
      * Carrega um conjunto de imagens no formato: prefixo (1).png, prefixo (2).png, ...
      * @param prefixo prefixo da imagem a ser carregada
      * @param numeroDeImagens numero de imagens a serem carregadas
+     * @return As imagens com o prefixo encontradas
      */
     private GreenfootImage[] carregarImagens(String prefixo, int numeroDeImagens) {
         GreenfootImage[] imagens = new GreenfootImage[numeroDeImagens];
