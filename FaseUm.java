@@ -16,6 +16,7 @@ public class FaseUm extends Fase
     public FaseUm()
     {
         prepare();
+        setBackground(new GreenfootImage("faseUm.png"));
     }
     
     /**

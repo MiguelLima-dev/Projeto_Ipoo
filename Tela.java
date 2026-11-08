@@ -17,7 +17,8 @@ public class Tela extends World
      */
     public Tela(String caminhoImagem)
     {    
-        super(800, 600, 1); 
+        super(1200, 900, 1); 
+
         setBackground(new GreenfootImage(caminhoImagem));
         
         musica.setVolume(70);
