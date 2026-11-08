@@ -8,15 +8,36 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Tela extends World
 {
-
+    // guarda a musica que toca durante as telas do jogo
+    private static GreenfootSound musica = new GreenfootSound("musica_assombrada.wav");
+    
     /**
      * Constructor for objects of class Tela.
      * 
      */
     public Tela(String caminhoImagem)
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
         setBackground(new GreenfootImage(caminhoImagem));
+        
+        musica.setVolume(70);
     }
+    
+    /**
+     * Comeca a tocar a musica quando entra em uma tela
+     */
+    public void started() {
+        musica.playLoop();
+    }
+    
+    /**
+     * Pausa a musica para comecar de onde parou depois 
+     */
+    public void stopped() {
+        musica.pause();
+    }
+    
+
+
+
 }
