@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Fruto
+comment0.text=\n\ Write\ a\ description\ of\ class\ Fruto\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Fruto()
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ Fruto\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment3.params=
+comment3.target=void\ brotar()
+comment3.text=\n\ Faz\ o\ fruto\ come\u00E7ar\ a\ brotar\n
+comment4.params=
+comment4.target=void\ animarBrotar()
+comment4.text=\n\ Executa\ a\ animacao\ de\ crescimento\ do\ fruto\n
+comment5.params=
+comment5.target=boolean\ coletar()
+comment5.text=\n\ Tenta\ remover\ o\ fruto\ da\ planta,\ so\ funciona\ quando\ ele\ eh\ coletavel\n\ @return\ true\ se\ o\ fruto\ foi\ coletado,\ false\ caso\ contrario\n
+comment6.params=
+comment6.target=boolean\ podeBrotar()
+comment6.text=\n\ Retorna\ se\ o\ fruto\ poder\ brotar\n\ @return\ true\ se\ o\ fruto\ pode\ brotar,\ false\ caso\ contrario\n
+numComments=7

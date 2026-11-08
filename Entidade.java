@@ -75,7 +75,7 @@ public class Entidade extends Actor
      * @param numeroDeImagens numero de imagens a serem carregadas
      * @return As imagens com o prefixo encontradas
      */
-    private GreenfootImage[] carregarImagens(String prefixo, int numeroDeImagens) {
+    public static GreenfootImage[] carregarImagens(String prefixo, int numeroDeImagens) {
         GreenfootImage[] imagens = new GreenfootImage[numeroDeImagens];
         for (int i = 0; i < imagens.length; i++) {
             imagens[i] = new GreenfootImage(prefixo + " (" + (i+1) + ").png");
