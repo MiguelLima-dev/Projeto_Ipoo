@@ -7,10 +7,8 @@ import java.util.List;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class FaseUm extends Fase
+public class FaseUm extends World
 {
-    // lista de frutos do mundo
-    private List<Fruto> frutos;
     // guarda a imagem original do fundo
     private GreenfootImage fundoOriginal;
     
@@ -20,12 +18,12 @@ public class FaseUm extends Fase
      */
     public FaseUm()
     {
+        super(1200, 900, 1);
         fundoOriginal = new GreenfootImage(getBackground());
         
         prepare();
         setBackground(new GreenfootImage("faseUm.png"));
-        frutos = getObjects(Fruto.class);
-
+ 
         Fazendeiro fazendeiro = new Fazendeiro();
         addObject(fazendeiro,163,373);
     }
@@ -42,6 +40,9 @@ public class FaseUm extends Fase
      * Tenta crescer um fruto, com uma chance de 1%
      */    
     private void tentarCrescerFruto() {
+        // lista com os frutos da fase
+        List<Fruto> frutos = getObjects(Fruto.class);
+        
         int tentativa = Greenfoot.getRandomNumber(100);
         if (tentativa < 1) {
             if (frutos.size() > 0) {
@@ -50,11 +51,17 @@ public class FaseUm extends Fase
             }
         }
     }
-
+    
+    /** 
+     * Retorna a pontuacao do jogador nessa fase.
+     */
     private int obterPontuacaoJogador() {
         return getObjects(Fazendeiro.class).get(0).obterPontuacao();
     }
-
+    
+    /**
+     * Atualiza o placar da pontuacao
+     */
     private void atualizarPlacar() {
         GreenfootImage fundo = new GreenfootImage(fundoOriginal);
         fundo.setColor(Color.WHITE);

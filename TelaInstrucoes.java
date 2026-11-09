@@ -18,8 +18,11 @@ public class TelaInstrucoes extends Tela
         super("telaInstrucoes.png");
     }
     
-    public void act() {
-        if (Greenfoot.isKeyDown("space"))
+    @Override
+    protected void tratarTecla(String tecla) {
+        if ("space".equals(tecla)) {
+            pararMusica();
             Greenfoot.setWorld(new FaseUm());
+        }
     }
 }

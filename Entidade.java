@@ -1,8 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Entidade here.
- *
+ * Classe entidade, guarda as informacoes comuns a todos os personagens animados
+ * do jogo.
  * @author (your name) 
  * @version (a version number or a date)
  */
@@ -10,7 +10,6 @@ public class Entidade extends Actor
 {
     // velocidade com que essa entidade se move
     private int vel;
-
     // vetor de imagens da entidade parada
     private GreenfootImage[] imagensParado;
     // vetor de imagens da entidade andando

@@ -15,16 +15,17 @@ public class TelaInicial extends Tela
      */
     public TelaInicial()
     {  
-        // cria um mundo.
         super("telaInicial.png");
         
     }
     
-    public void act() {
-        if (Greenfoot.isKeyDown("enter")) {
+    @Override
+    protected void tratarTecla(String tecla) {
+        if ("enter".equals(tecla)) {
             Greenfoot.setWorld(new TelaInstrucoes());
         }
-        else if (Greenfoot.isKeyDown("space")) {
+        else if ("space".equals(tecla)) {
+            pararMusica();
             Greenfoot.setWorld(new FaseUm());
         }
     }

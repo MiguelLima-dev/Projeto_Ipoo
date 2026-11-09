@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Fruto
-comment0.text=\n\ Write\ a\ description\ of\ class\ Fruto\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Eh\ um\ fruto\ coletavel\ pelo\ jogador,\ utilizado\ como\ marca\ de\ pontuacao.\n\ \n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=Fruto()
 comment2.params=
@@ -15,7 +15,4 @@ comment4.text=\n\ Executa\ a\ animacao\ de\ crescimento\ do\ fruto\n
 comment5.params=
 comment5.target=boolean\ coletar()
 comment5.text=\n\ Tenta\ remover\ o\ fruto\ da\ planta,\ so\ funciona\ quando\ ele\ eh\ coletavel\n\ @return\ true\ se\ o\ fruto\ foi\ coletado,\ false\ caso\ contrario\n
-comment6.params=
-comment6.target=boolean\ podeBrotar()
-comment6.text=\n\ Retorna\ se\ o\ fruto\ poder\ brotar\n\ @return\ true\ se\ o\ fruto\ pode\ brotar,\ false\ caso\ contrario\n
-numComments=7
+numComments=6

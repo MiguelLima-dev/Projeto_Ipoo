@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Fruto here.
+ * Eh um fruto coletavel pelo jogador, utilizado como marca de pontuacao.
+ * 
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -66,6 +67,8 @@ public class Fruto extends Actor
                 coletavel = true;
                 // o fruto nao esta mais crescendo
                 brotando = false;
+                // toca o som
+                Greenfoot.playSound("alert.wav");
             }
         }
     }
@@ -83,13 +86,5 @@ public class Fruto extends Actor
         }
         // o fruto ainda nao eh coletavel
         return false;
-    }
-    
-    /**
-     * Retorna se o fruto poder brotar
-     * @return true se o fruto pode brotar, false caso contrario
-     */
-    public boolean podeBrotar() {
-        return !coletavel && !brotando;
     }
 }
