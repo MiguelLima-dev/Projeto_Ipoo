@@ -1,6 +1,6 @@
 TRABALHO DE IPOO - PRIMEIRA ENTREGA
 
-Nome do jogo:
+Nome do jogo: O Despertar das Lendas
 
 Integrantes do grupo:
 - Ana Carolina Silva Sousa
