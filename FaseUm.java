@@ -52,7 +52,7 @@ public class FaseUm extends World
         // tenta fazer um fruto brotar
         tentarCrescerFruto();
         // atualiza o relogio
-        relogio.passatempo();
+        relogio.passaTempo();
         // atualiza o relogio e o placar
         atualizarInfo();
 
@@ -178,10 +178,10 @@ public class FaseUm extends World
         jogador = new Fazendeiro();
         addObject(jogador,163,373);
 
-        placar = new Texto(String.valueOf(obterPontuacaoJogador()));
+        placar = new Texto(String.valueOf(jogador.obterPontuacao()));
         addObject(placar, 1210, 70);
         
-        horario = new Texto(relogio.obterHoras());
+        horario = new Texto(relogio.obterHorario());
         addObject(horario, 200, 50);
 
         Obstaculo obstaculo = new Obstaculo();

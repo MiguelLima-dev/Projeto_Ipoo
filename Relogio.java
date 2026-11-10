@@ -28,7 +28,7 @@ public class Relogio {
     /**
      * Incrementa a contagem de tempo (tiques) atualizando horas e minutos.
      */
-    private void passaTempo() {
+    public void passaTempo() {
         //incrementa o contador de tiques
         tiquesRelogio++;
 
