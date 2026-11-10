@@ -8,14 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Inimigo extends Entidade
 {
-    // dano que esse inimigo causa
-    private int dano;
     
     public Inimigo(String prefixoParado, int nImagensParado,
-                   String prefixoAndando, int nImagensAndando, int vel,
-                   int dano) {
+                   String prefixoAndando, int nImagensAndando, int vel) {
         super(prefixoParado, nImagensParado, prefixoAndando, nImagensAndando, vel);
-        this.dano = dano;
     }
     
     /**

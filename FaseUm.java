@@ -8,19 +8,26 @@ import java.util.List;
  * @version (a version number or a date)
  */
 public class FaseUm extends World
-{
-    // guarda a imagem original do fundo
-    private GreenfootImage fundoOriginal;
-    // Atributos que formam o relógio
-    private int horas;
-    private int minutos;
-    private int tiquesRelogio;
+{   
+    // minutos até o jogo acabar, até o relogio bater 00:00
+    private static final int totalMinutos = 60;
+    // minutos até a saida aparecer
+    private static final int saidaMinutos = 45;
+    // chance, em %, de um fruto brotar, a cada act
+    private static final int chanceBrotar = 1;
+
+    // o actor que o jogador controla
+    private Fazendeiro jogador;
+    // Atributos que formam o relógio e o horario
+    private Relogio relogio;
+    private Texto horario;
     //atributos do tempo final
     private boolean saidaLiberada;
-    private boolean aparecerMonstro;
     // Condição de termino
     private boolean fimDeJogo;
-    
+    // texto do placar
+    private Texto placar;
+
     /**
      * Constructor for objects of class FaseUm.
      * 
@@ -28,34 +35,27 @@ public class FaseUm extends World
     public FaseUm()
     {
         super(1200, 900, 1);
-        fundoOriginal = new GreenfootImage(getBackground());
+        setBackground(new GreenfootImage("faseUm.png"));
+
+        // a hora inicia em 23:00
+        relogio = new Relogio(23, 00);
+        saidaLiberada = false;
+        fimDeJogo = false;
         
         prepare();
-        setBackground(new GreenfootImage("faseUm.png"));
- 
-        Fazendeiro fazendeiro = new Fazendeiro();
-        addObject(fazendeiro,163,373);
-        
-        horas = 23;
-        minutos = 0;
-        tiquesRelogio = 0;
-        
-        saidaLiberada = false;
-        aparecerMonstro = false;
-        fimDeJogo = false;
     }
 
     /**
      * A cada act, o mundo tenta fazers um fruto crescer
      */
     public void act() {
+        // tenta fazer um fruto brotar
         tentarCrescerFruto();
-        atualizarPlacar();
-        
-        //Controle do time
-        passaTempo();
-        atualizarRelogio();
-        verificarRelogio();
+        // atualiza o relogio
+        relogio.passatempo();
+        // atualiza o relogio e o placar
+        atualizarInfo();
+
         
         //vitória ou derrota
         derrota();
@@ -70,7 +70,7 @@ public class FaseUm extends World
         List<Fruto> frutos = getObjects(Fruto.class);
         
         int tentativa = Greenfoot.getRandomNumber(100);
-        if (tentativa < 1) {
+        if (tentativa < chanceBrotar) {
             if (frutos.size() > 0) {
                 int indiceFruto = Greenfoot.getRandomNumber(frutos.size());
                 frutos.get(indiceFruto).brotar();
@@ -78,68 +78,28 @@ public class FaseUm extends World
         }
     }
     
-    /** 
-     * Retorna a pontuacao do jogador nessa fase.
-     */
-    private int obterPontuacaoJogador() {
-        return getObjects(Fazendeiro.class).get(0).obterPontuacao();
-    }
-    
     /**
-     * Atualiza o placar da pontuacao
+     * Atualiza o placar da pontuacao e tambem o relogio
      */
-    private void atualizarPlacar() {
-        GreenfootImage fundo = new GreenfootImage(fundoOriginal);
-        fundo.setColor(Color.WHITE);
-        fundo.setFont(new Font("Serif", true, false, 36));
-        fundo.drawString("" + obterPontuacaoJogador(), 1035, 75);
-        setBackground(fundo);
-    }
-    
-    /**
-     * Incrementa a contagem de tempo (tiques) atualizando horas e minutos.
-     */
-    private void passaTempo(){
-        //incrementa o contador de tiques
-        tiquesRelogio++;
-        
-        //A cada 30 tiques avança 1 minuto
-        if(tiquesRelogio >= 30){
-            minutos++;
-            tiquesRelogio = 0;
-            
-            // A cada 60 minutos avança 1 hora
-            if(minutos >= 60){
-                minutos = 0;
-                horas = (horas + 1) % 24;
-            }
-        }
-    }
-    
-    /**
-     * Exibe horas e minutos na tela
-     */
-    private void atualizarRelogio(){
-        //exibe horas e minutos com 2 digitos
-        String tempoTela = String.format("%02d:%02d", horas, minutos);
-        //Exibe o horário na tela
-        showText("Horário - " + tempoTela, 200, 50);
+    private void atualizarInfo() {
+        placar.atualizarTexto(String.valueOf(jogador.obterPontuacao()));
+        horario.atualizarTexto(relogio.obterHorario());
     }
     
     /**
      * Verifica se já deu 23:30 ou 00:00
      */
     private void verificarRelogio(){
-        //Verifica se já deu 23:30 para liberar a saida
-        if(horas == 23 && minutos >= 30 && !saidaLiberada){
+        //Verifica se já deu 23:45 para liberar a saida
+        if(horas == 23 && minutos >= 45 && !saidaLiberada){
             saidaLiberada = true;
             surgirMonstro();
-            showText("SAÍDA LIBERADA!", 600, 50);
+            addObject(new Texto("SAÍDA LIBERADA!"), 600, 50);
             
             addObject(new Saida(), 1170, 312);
         }
         //Verifica se já deu 00:00 para finalizar o tempo de jogo
-        if (horas == 0 && minutos == 0 && !aparecerMonstro){
+        if (horas == 0 && minutos == 0){
             fimDeJogo = true;
             showText("O tempo de jogo acabou!", 600, 450);
             Greenfoot.stop();
@@ -178,7 +138,7 @@ public class FaseUm extends World
             if(jogador.encostouNoInimigo()){
                 //finaliza o jogo
                fimDeJogo = true;
-               showText("GAME OVER!", 600, 450);
+               addObject(new Texto("GAME OVER!"), 600, 350);
                Greenfoot.stop();
                return;
             }
@@ -215,8 +175,16 @@ public class FaseUm extends World
      */
     private void prepare()
     {
+        jogador = new Fazendeiro();
+        addObject(jogador,163,373);
 
-        Obstaculo obstaculo = new Obstaculo("arbusto.png");
+        placar = new Texto(String.valueOf(obterPontuacaoJogador()));
+        addObject(placar, 1210, 70);
+        
+        horario = new Texto(relogio.obterHoras());
+        addObject(horario, 200, 50);
+
+        Obstaculo obstaculo = new Obstaculo();
         addObject(obstaculo,285,211);
         Fruto fruto = new Fruto();
         addObject(fruto,769,337);

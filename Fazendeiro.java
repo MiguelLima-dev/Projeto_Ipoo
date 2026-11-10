@@ -66,7 +66,7 @@ public class Fazendeiro extends Entidade
      * @return true se encostar no inimigo, false se não encostar
      */
     public  boolean encostouNoInimigo(){
-        return isTouching(BichoPapao.class);
+        return isTouching(Inimigo.class);
     }
     
     /**

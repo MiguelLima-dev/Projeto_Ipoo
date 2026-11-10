@@ -12,8 +12,8 @@ public class BichoPapao extends Inimigo
     private boolean andandoParaDireita;
 
     public BichoPapao() {
-        // idle: 11 imagens| walk: 10 imagens| velocidade: 1| dano: 2
-        super("BichoPapao_idle", 11, "BichoPapao_walk", 10, 1, 2);
+        // idle: 11 imagens| walk: 10 imagens| velocidade: 1
+        super("BichoPapao_idle", 11, "BichoPapao_walk", 10, 1);
 
         // o bicho papao comeca andando para direita
         andandoParaDireita = true;

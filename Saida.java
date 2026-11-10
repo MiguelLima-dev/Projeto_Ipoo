@@ -7,7 +7,6 @@ import greenfoot.*;
  */
 public class Saida extends Actor
 {
-    
     /**
      * Constructor for objects of class Saida
      */
@@ -17,5 +16,4 @@ public class Saida extends Actor
         portal.scale(100,150);
         setImage(portal);
     }
-
 }
