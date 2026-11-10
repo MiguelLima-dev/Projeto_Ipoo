@@ -60,4 +60,20 @@ public class Fazendeiro extends Entidade
     public int obterPontuacao() {
         return pontuacao;
     }
+    
+    /**
+     * Verifica se o jogador e o inimigo se tocaram
+     * @return true se encostar no inimigo, false se não encostar
+     */
+    public  boolean encostouNoInimigo(){
+        return isTouching(BichoPapao.class);
+    }
+    
+    /**
+     * Verifica se o jogador chegou até a saída
+     * @return true se o jogador chegou na saida, false se não chegou
+     */
+    public boolean chegouNaSaida(){
+        return isTouching(Saida.class);
+    }
 }
