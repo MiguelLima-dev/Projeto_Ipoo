@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BichoPapao here.
+ * O inimigo BichoPapao pega os itens que aparecem no mapa.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author helena
+ * @version 10-11
  */
 public class BichoPapao extends Inimigo
 {   
