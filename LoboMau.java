@@ -37,18 +37,20 @@ public class LoboMau extends Inimigo
      * O lobo mau se move de um lado para o outro no eixo x.
      */
     private void tratarMovimento() {
+        int dx;
+        if (andandoParaDireita) {
+            dx = obterVel();
+        }
+        else {
+            dx = -obterVel();
+        }
+        // move o lobo no sentido indicado
+        boolean moveu = mover(dx, 0);
+        
         // verifica se o lobomau se encostou na beira do mundo,
         // se sim, muda o sentido do movimento
-        if (isAtEdge()) {
+        if (isAtEdge() || !moveu) {
             andandoParaDireita = !andandoParaDireita;
-        }
-        
-        // move o lobomau conforme o sentido do movimento
-        if (andandoParaDireita) {
-            mover(obterVel(), 0);
-        }
-        else { 
-            mover(-obterVel(), 0);
         }
     }
 }
