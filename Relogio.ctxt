@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Relogio
+comment0.text=\r\n\ Essa\ classe\ \u00E9\ utilizada\ para\ controlar\ a\ passagem\ de\ tempo\ no\ jogo\r\n
+comment1.params=horaInicial\ minutoInicial
+comment1.target=Relogio(int,\ int)
+comment1.text=\r\n\ Cria\ um\ relogio,\ com\ hora\ e\ minutos\ iniciais\ passados\r\n\ @param\ horaInicial\ a\ hora\ inicial\ do\ relogio\r\n\ @param\ minutoInicial\ o\ minuto\ inicial\ do\ relogio\r\n
+comment2.params=
+comment2.target=void\ passaTempo()
+comment2.text=\r\n\ Incrementa\ a\ contagem\ de\ tempo\ (tiques)\ atualizando\ horas\ e\ minutos.\r\n
+comment3.params=
+comment3.target=java.lang.String\ obterHorario()
+comment3.text=\r\n\ Retorna\ a\ hora\ no\ formato\:\r\n\ \ \ \ \ \ Hor\u00E1rio\ -\ HH\:MM\r\n
+comment4.params=
+comment4.target=int\ obterMinutosPassados()
+comment4.text=\r\n\ Retorna\ quantos\ minutos\ se\ passaram\r\n
+numComments=5
