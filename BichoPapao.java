@@ -24,25 +24,15 @@ public class BichoPapao extends Inimigo
     {
         super.act();
         tratarMovimento();
+        tentarPegarFruto();
     }
 
     /**
      * O método busca onde estão os frutos no mapa e faz o BichoPapao
-     * coleta-los.
+     * ir até eles.
      */
     private void tratarMovimento() {
-        // busca todos os objetos da classe 'Fruto' no mapa
-        java.util.List frutos = getWorld().getObjects(Fruto.class);
-        
-        // se houver pelo menos um fruto o bicho papao vai até suas coordenadas
-        if(!frutos.isEmpty())
-        {
-            Fruto itemAlvo = (Fruto) frutos.get(0);
-            turnTowards(itemAlvo.getX(), itemAlvo.getY());
-            move(1);
-        }
-        
-        if(isTouching(Fruto.class))
+        for (Fruto fruto : getWorld().getObjects(Fruto.class))
         {
             
         }

@@ -87,4 +87,12 @@ public class Fruto extends Actor
         // o fruto ainda nao eh coletavel
         return false;
     }
+    
+    /**
+     * @return true se o fruto pode ser coletado e false caso contrário.
+     */
+    public boolean frutoEstaColetavel()
+    {
+        return coletavel;
+    }
 }
