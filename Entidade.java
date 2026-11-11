@@ -135,4 +135,18 @@ public class Entidade extends Actor
         setLocation(getX(), getY() + dy);
         if (isTouching(Obstaculo.class)) setLocation(getX(), yAnterior);
     }
+    
+    /**
+     * Tenta pegar o fruto que a entidade está tocando.
+     * @return true se foi possível pegar o fruto, false caso contrário.
+     */
+    protected boolean tentarPegarFruto()
+    {
+        if(isTouching(Fruto.class))
+        {
+            Fruto fruto = (Fruto) getOneIntersectingObject(Fruto.class);
+            return fruto.coletar();
+        }
+        return false;
+    }
 }

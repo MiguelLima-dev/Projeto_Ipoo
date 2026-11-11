@@ -4,6 +4,7 @@ class.Saida.image=portal.png
 dependency1.from=TelaInstrucoes
 dependency1.to=FaseUm
 dependency1.type=UsesDependency
+<<<<<<< HEAD
 dependency10.from=FaseUm
 dependency10.to=Obstaculo
 dependency10.type=UsesDependency
@@ -12,15 +13,33 @@ dependency11.to=Entidade
 dependency11.type=UsesDependency
 dependency12.from=Entidade
 dependency12.to=Obstaculo
+=======
+dependency10.from=Entidade
+dependency10.to=Fruto
+dependency10.type=UsesDependency
+dependency11.from=Entidade
+dependency11.to=Obstaculo
+dependency11.type=UsesDependency
+dependency12.from=Fazendeiro
+dependency12.to=BichoPapao
+>>>>>>> origin/branchhelena
 dependency12.type=UsesDependency
 dependency13.from=Fazendeiro
 dependency13.to=Fruto
 dependency13.type=UsesDependency
+<<<<<<< HEAD
 dependency14.from=Fazendeiro
 dependency14.to=Inimigo
 dependency14.type=UsesDependency
 dependency15.from=Fazendeiro
 dependency15.to=Saida
+=======
+dependency14.from=Cuca
+dependency14.to=Fazendeiro
+dependency14.type=UsesDependency
+dependency15.from=BichoPapao
+dependency15.to=Fruto
+>>>>>>> origin/branchhelena
 dependency15.type=UsesDependency
 dependency2.from=TelaInicial
 dependency2.to=TelaInstrucoes
@@ -46,6 +65,7 @@ dependency8.type=UsesDependency
 dependency9.from=FaseUm
 dependency9.to=BichoPapao
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=646
 editor.fx.0.width=814
 editor.fx.0.x=2120
@@ -53,6 +73,15 @@ editor.fx.0.y=67
 height=900
 package.numDependencies=15
 package.numTargets=13
+=======
+editor.fx.0.height=727
+editor.fx.0.width=697
+editor.fx.0.x=-7
+editor.fx.0.y=0
+height=736
+package.numDependencies=15
+package.numTargets=14
+>>>>>>> origin/branchhelena
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -75,33 +104,59 @@ target1.width=120
 target1.x=0
 target1.y=0
 target10.height=70
+<<<<<<< HEAD
 target10.name=Obstaculo
+=======
+target10.name=BichoPapao
+>>>>>>> origin/branchhelena
 target10.showInterface=false
 target10.type=ClassTarget
 target10.width=120
 target10.x=0
 target10.y=0
 target11.height=70
+<<<<<<< HEAD
 target11.name=FaseUm
+=======
+target11.name=Obstaculo
+>>>>>>> origin/branchhelena
 target11.showInterface=false
 target11.type=ClassTarget
 target11.width=120
 target11.x=0
 target11.y=0
 target12.height=70
+<<<<<<< HEAD
 target12.name=Entidade
+=======
+target12.name=FaseUm
+>>>>>>> origin/branchhelena
 target12.showInterface=false
 target12.type=ClassTarget
 target12.width=120
 target12.x=0
 target12.y=0
 target13.height=70
+<<<<<<< HEAD
 target13.name=Inimigo
+=======
+target13.name=Entidade
+>>>>>>> origin/branchhelena
 target13.showInterface=false
 target13.type=ClassTarget
 target13.width=120
 target13.x=0
 target13.y=0
+<<<<<<< HEAD
+=======
+target14.height=70
+target14.name=Inimigo
+target14.showInterface=false
+target14.type=ClassTarget
+target14.width=120
+target14.x=0
+target14.y=0
+>>>>>>> origin/branchhelena
 target2.height=70
 target2.name=TelaInstrucoes
 target2.showInterface=false
@@ -124,14 +179,22 @@ target4.width=120
 target4.x=0
 target4.y=0
 target5.height=70
+<<<<<<< HEAD
 target5.name=Relogio
+=======
+target5.name=Fase
+>>>>>>> origin/branchhelena
 target5.showInterface=false
 target5.type=ClassTarget
 target5.width=120
 target5.x=0
 target5.y=0
 target6.height=70
+<<<<<<< HEAD
 target6.name=Texto
+=======
+target6.name=LoboMau
+>>>>>>> origin/branchhelena
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=120
@@ -145,21 +208,36 @@ target7.width=120
 target7.x=0
 target7.y=0
 target8.height=70
+<<<<<<< HEAD
 target8.name=Fruto
+=======
+target8.name=Cuca
+>>>>>>> origin/branchhelena
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=120
 target8.x=0
 target8.y=0
 target9.height=70
+<<<<<<< HEAD
 target9.name=BichoPapao
+=======
+target9.name=Fruto
+>>>>>>> origin/branchhelena
 target9.showInterface=false
 target9.type=ClassTarget
 target9.width=120
 target9.x=0
 target9.y=0
 version=3.1.0
+<<<<<<< HEAD
 width=1440
 world.lastInstantiated=FaseUm
 xPosition=152
 yPosition=227
+=======
+width=1382
+world.lastInstantiated=TelaInstrucoes
+xPosition=0
+yPosition=0
+>>>>>>> origin/branchhelena

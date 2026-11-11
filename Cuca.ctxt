@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Cuca
+comment0.text=\n\ O\ inimigo\ Cuca\ segue\ o\ inimigo\ no\ mapa.\n\ \n\ @author\ helena\n\ @version\ 10-11\n
+comment1.params=
+comment1.target=Cuca()
+comment1.text=\n\ Construtor\ de\ objetos\ para\ a\ classe\ Cuca.\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ Cuca\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment3.params=
+comment3.target=void\ tratarMovimento()
+comment3.text=\n\ O\ m\u00E9todo\ busca\ o\ fazendeiro\ e\ faz\ com\ que\ a\ Cuca\ se\ movimente\ em\ dire\u00E7\u00E3o\n\ a\ ele\ idependente\ da\ sua\ dist\u00E2ncia\ ou\ posi\u00E7\u00E3o\ no\ mapa.\n
+numComments=4

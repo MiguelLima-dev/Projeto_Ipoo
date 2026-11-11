@@ -1,22 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BichoPapao here.
+ * O inimigo BichoPapao pega os itens que aparecem no mapa.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author helena
+ * @version 11-11
  */
 public class BichoPapao extends Inimigo
-{   
-    // guarda para qual sentido o bicho papao anda
-    private boolean andandoParaDireita;
-
+{  
+    // fruto que o bicho papao vai roubar 
+    private Fruto frutoAlvo;
+    
+    /**
+     * Construtor de objetos para a classe BichoPapao.
+     */
     public BichoPapao() {
+
         // idle: 11 imagens| walk: 10 imagens| velocidade: 1
         super("BichoPapao_idle", 11, "BichoPapao_walk", 10, 1);
-
-        // o bicho papao comeca andando para direita
-        andandoParaDireita = true;
     }
 
     /**
@@ -27,25 +28,65 @@ public class BichoPapao extends Inimigo
     {
         super.act();
         tratarMovimento();
+        tentarPegarFruto();
     }
 
-    /**
-     * O bicho papao se move de um lado para o outro no eixo x
-     */
-    private void tratarMovimento() {
-        // verifica se o bichopapao se encostou na beira do mundo,
-        // se sim, muda o sentido do movimento
-        if (isAtEdge()) {
+    private void tratarMovimento()
+    {
+        // se não houver alvo ou o alvo não for coletavel ele busca um novo alvo.
+        if (frutoAlvo == null || !frutoAlvo.frutoEstaColetavel())
+        {
+            buscarFruto();
+        }
+        // se houver um fruto alvo o bicho papao vai até ele.
+        if (frutoAlvo != null)
+        {
+            perseguirFruto();
+        }
+        // se ele conseguir pegar o fruto, a variavel alvo fica nula para ele procurar outro fruto.
+        if (tentarPegarFruto())
+        {
+            frutoAlvo = null;
+        }
+    }
     
-            andandoParaDireita = !andandoParaDireita;
+    /**
+     * O método busca um fruto para ser perseguido no mapa.
+     */
+    private void buscarFruto() {
+        frutoAlvo = null;
+        for (Fruto fruto : getWorld().getObjects(Fruto.class))
+        {   
+            // se o objeto fruto que ele encontrou for coletavel, ele será armazenado na variavel alvo.
+            if (fruto.frutoEstaColetavel())
+            {
+                frutoAlvo = fruto;
+                break; 
+            }
+        }
+    }
+    
+    private void perseguirFruto()
+    {
+        int dx = 0; // posicao horizontal
+        int dy = 0; // posicao vertical
+
+        // se o fruto estiver a direita, dx recebe velocidade positiva
+        // se estiver a esquerda, recebe velocidade negativa 
+        if (frutoAlvo.getX() > getX()) {    
+            dx = obterVel();
+        } else if (frutoAlvo.getX() < getX()) {   
+            dx = -obterVel();
         }
         
-        // move o bichopapao conforme o sentido do movimento
-        if (andandoParaDireita) {
-            mover(obterVel(), 0);
+        // se o fruto estiver em cima, dy recebe velocidade positiva
+        // se estiver em baixo, velocidade negativa
+        if (frutoAlvo.getY() > getY()) {
+            dy = obterVel();
+        } else if (frutoAlvo.getY() < getY()) {
+            dy = -obterVel();
         }
-        else { 
-            mover(-obterVel(), 0);
-        }
+    
+        mover(dx, dy);
     }
 }

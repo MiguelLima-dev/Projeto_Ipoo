@@ -23,8 +23,11 @@ public class Fazendeiro extends Entidade
         tratarMovimento();
         // trata a animacao idle do fazendeiro
         super.act();
-        
-        tentarPegarFruto();
+        // tenta pegar o fruto e adiciona na pontuação se for possível
+        if(tentarPegarFruto())
+        {
+            pontuacao += 1;
+        }
     }
 
     /**
@@ -38,19 +41,6 @@ public class Fazendeiro extends Entidade
         if (Greenfoot.isKeyDown("right")) dx += vel;
 
         mover(dx, dy);
-    }
-    
-    /**
-     * Tenta coletar um fruto que o fazendeiro toca, caso
-     * o fruto for coletado, incrementa a pontuacao.
-     */
-    private void tentarPegarFruto() {
-        if (isTouching(Fruto.class)) {
-            Fruto fruto = (Fruto) getOneIntersectingObject(Fruto.class);
-            if (fruto.coletar()) {
-                pontuacao += 1;
-            }
-        }
     }
     
     /**
