@@ -12,6 +12,4 @@ comment3.target=void\ tratarMovimento()
 comment4.params=
 comment4.target=void\ buscarFruto()
 comment4.text=\n\ O\ m\u00E9todo\ busca\ um\ fruto\ para\ ser\ perseguido\ no\ mapa.\n
-comment5.params=
-comment5.target=void\ perseguirFruto()
-numComments=6
+numComments=5

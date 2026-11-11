@@ -6,11 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Texto extends Actor
 {   
     // dimensoes da imagem e da fonte
-    private static final int largura = 350;
-    private static final int altura = 50;
-    private static final int margemX = 10;
-    private static final int margemY = 30;
-    private static final int tamanhoFonte = 36;
+    private static final int tamanhoFonte = 50;
     
     // guarda o texto exibido atualmente
     private String textoAtual;
@@ -38,10 +34,7 @@ public class Texto extends Actor
      */
     private void escreverTexto(String texto) {
         textoAtual = texto;
-
-        GreenfootImage imagem = new GreenfootImage(largura, altura);
-        imagem.setColor(Color.WHITE);
-        imagem.setFont(new Font("Serif", true, false, tamanhoFonte));
-        setImage(imagem);
+        setImage (new GreenfootImage(texto, tamanhoFonte, Color.WHITE,
+                                     new Color(0, 0, 0, 0)));
     }
 }

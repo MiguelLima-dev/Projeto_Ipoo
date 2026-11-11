@@ -28,7 +28,6 @@ public class BichoPapao extends Inimigo
     {
         super.act();
         tratarMovimento();
-        tentarPegarFruto();
     }
 
     private void tratarMovimento()
@@ -41,7 +40,7 @@ public class BichoPapao extends Inimigo
         // se houver um fruto alvo o bicho papao vai até ele.
         if (frutoAlvo != null)
         {
-            perseguirFruto();
+            moverEmDirecaoAoAlvo(frutoAlvo);
         }
         // se ele conseguir pegar o fruto, a variavel alvo fica nula para ele procurar outro fruto.
         if (tentarPegarFruto())
@@ -61,32 +60,10 @@ public class BichoPapao extends Inimigo
             if (fruto.frutoEstaColetavel())
             {
                 frutoAlvo = fruto;
-                break; 
+                return; 
             }
         }
     }
     
-    private void perseguirFruto()
-    {
-        int dx = 0; // posicao horizontal
-        int dy = 0; // posicao vertical
 
-        // se o fruto estiver a direita, dx recebe velocidade positiva
-        // se estiver a esquerda, recebe velocidade negativa 
-        if (frutoAlvo.getX() > getX()) {    
-            dx = obterVel();
-        } else if (frutoAlvo.getX() < getX()) {   
-            dx = -obterVel();
-        }
-        
-        // se o fruto estiver em cima, dy recebe velocidade positiva
-        // se estiver em baixo, velocidade negativa
-        if (frutoAlvo.getY() > getY()) {
-            dy = obterVel();
-        } else if (frutoAlvo.getY() < getY()) {
-            dy = -obterVel();
-        }
-    
-        mover(dx, dy);
-    }
 }

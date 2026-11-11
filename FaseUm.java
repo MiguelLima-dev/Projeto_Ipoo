@@ -21,8 +21,8 @@ public class FaseUm extends World
     // Atributos que formam o relógio e o horario
     private Relogio relogio;
     private Texto horario;
-    //atributos do tempo final
-    private boolean saidaLiberada;
+    // confere se a saida esta aberta
+    private boolean saidaAberta;
     // Condição de termino
     private boolean fimDeJogo;
     // texto do placar
@@ -39,9 +39,9 @@ public class FaseUm extends World
 
         // a hora inicia em 23:00
         relogio = new Relogio(23, 00);
-        saidaLiberada = false;
         fimDeJogo = false;
         
+        saidaAberta = false;
         prepare();
     }
 
@@ -56,10 +56,10 @@ public class FaseUm extends World
         // atualiza o relogio e o placar
         atualizarInfo();
 
-        
-        //vitória ou derrota
-        derrota();
-        vitoria();
+        // criar saida para o jogador, no horario esperado
+        tentarCriarSaida();
+        // trata as condicoes para o jogo acabar
+        tratarFimDeJogo();
     }
 
     /**
@@ -68,7 +68,7 @@ public class FaseUm extends World
     private void tentarCrescerFruto() {
         // lista com os frutos da fase
         List<Fruto> frutos = getObjects(Fruto.class);
-        
+
         int tentativa = Greenfoot.getRandomNumber(100);
         if (tentativa < chanceBrotar) {
             if (frutos.size() > 0) {
@@ -77,7 +77,7 @@ public class FaseUm extends World
             }
         }
     }
-    
+
     /**
      * Atualiza o placar da pontuacao e tambem o relogio
      */
@@ -85,87 +85,57 @@ public class FaseUm extends World
         placar.atualizarTexto(String.valueOf(jogador.obterPontuacao()));
         horario.atualizarTexto(relogio.obterHorario());
     }
-    
+
     /**
-     * Verifica se já deu 23:30 ou 00:00
+     * Verifica se já deu 23:45
      */
-    private void verificarRelogio(){
+    private void tentarCriarSaida(){
         //Verifica se já deu 23:45 para liberar a saida
-        if(horas == 23 && minutos >= 45 && !saidaLiberada){
-            saidaLiberada = true;
-            surgirMonstro();
-            addObject(new Texto("SAÍDA LIBERADA!"), 600, 50);
-            
+        if(relogio.obterMinutosPassados() >= saidaMinutos && !saidaAberta){
+            addObject(new Texto("SAÍDA LIBERADA!"), 690, 50);
             addObject(new Saida(), 1170, 312);
+            saidaAberta = true;
         }
-        //Verifica se já deu 00:00 para finalizar o tempo de jogo
-        if (horas == 0 && minutos == 0){
-            fimDeJogo = true;
-            showText("O tempo de jogo acabou!", 600, 450);
-            Greenfoot.stop();
-        }
+    }
+
+    
+    /**
+     * Exibe uma mensagem de fim de jogo e pausa a execucao
+     */
+    private void finalizarJogo(String mensagem){
+        fimDeJogo = true;
+        addObject(new Texto(mensagem), 700, 450);
+        Greenfoot.stop();
     }
     
     /**
-     * Faz o BichoPapao aparcer
+     * Verifica as condições de fim de jogo, sao elas:
+     * tempo esgotado, jogador pego por um inimigo e jogador escapando
      */
-    private void surgirMonstro(){
-        //Adiciona o monstro nessas coordenadas
-        addObject(new BichoPapao(), 1100, 450);
-    }
-    
-    /**
-     * Metodo de acesso para consultar se a saida já está liberada
-     * @return true se a saida estiver liberada, false se não estiver liberada 
-     */
-    public boolean saidaEstaLiberada(){
-        //Retorna o estado se o acesso a saida esta liberado ou não
-        return saidaLiberada;
-    }
-    
-    /**
-     * Verifica as condições de derrota e finaliza caso o fazendeiro seja atingido pelo inimigo
-     */
-    private void derrota(){
-        //verifica se o jogo ja terminou
-        if(fimDeJogo) {
-            return;
-        }
-        
-        //Busca o objeto da classe fazendeiro
-        for(Fazendeiro jogador: getObjects(Fazendeiro.class)){
-            //Confere se o jogador encostou no inmigo
-            if(jogador.encostouNoInimigo()){
-                //finaliza o jogo
-               fimDeJogo = true;
-               addObject(new Texto("GAME OVER!"), 600, 350);
-               Greenfoot.stop();
-               return;
-            }
-        }
-    }
-    
-    /**
-     * Verifica as condições de vitória do jogador 
-     */
-    private void vitoria(){
+    private void tratarFimDeJogo(){
         //Confere se o jogo já terminou
         if(fimDeJogo){
             return;
         }
-        
-        //Busca o objeto da classe Fazendeiro
-        for (Fazendeiro jogador: getObjects(Fazendeiro.class)){
-            //Verifica se a saida ja esta liberada
-            if(saidaLiberada)
-            //Verifica se o jogador chegou na saida
-            if(jogador.chegouNaSaida()){
-                //Finaliza o jogo
-                fimDeJogo = true;
-                showText("Você conseguiu escapar a tempo!", 600, 450);
-                Greenfoot.stop();
-                return;
-            }
+
+        //Verifica se já deu 00:00 para finalizar o tempo de jogo
+        if (relogio.obterMinutosPassados() == totalMinutos){
+            finalizarJogo("O tempo de jogo acabou!");
+            return;
+        }
+
+        //Confere se o jogador encostou no inimigo
+        if(jogador.encostouNoInimigo()){
+            //finaliza o jogo
+            finalizarJogo("GAME OVER!");
+            return;
+        }
+
+        //Verifica se a saida ja esta liberada e se o jogador chegou na saida
+        if(jogador.chegouNaSaida()){
+            //Finaliza o jogo
+            finalizarJogo("Você conseguiu escapar a tempo!");
+            return;
         }
     }
     
@@ -175,34 +145,47 @@ public class FaseUm extends World
      */
     private void prepare()
     {
+
+        // inicia e posiciona o jogador
         jogador = new Fazendeiro();
-        addObject(jogador,163,373);
-
+        addObject(jogador,284,576);
+        // inicia e posiciona o placar
         placar = new Texto(String.valueOf(jogador.obterPontuacao()));
-        addObject(placar, 1210, 70);
-        
+        addObject(placar, 1050, 62);
+        // inicia e posiciona o horario
         horario = new Texto(relogio.obterHorario());
-        addObject(horario, 200, 50);
+        addObject(horario, 165, 47);
+        // inicia e posiciona os frutos
+        Cuca cuca = new Cuca(jogador);
+        addObject(cuca,592,102);
+        cuca.setLocation(592,102);
 
-        Obstaculo obstaculo = new Obstaculo();
-        addObject(obstaculo,285,211);
+        LoboMau loboMau = new LoboMau();
+        addObject(loboMau,646,236);
+
+        BichoPapao bichoPapao = new BichoPapao();
+        addObject(bichoPapao,135,322);
+
+        // inicia e posiciona os frutos
         Fruto fruto = new Fruto();
-        addObject(fruto,769,337);
+        addObject(fruto,829,60);
         Fruto fruto2 = new Fruto();
-        addObject(fruto2,580,257);
+        addObject(fruto2,681,612);
         Fruto fruto3 = new Fruto();
-        addObject(fruto3,592,157);
+        addObject(fruto3,229,155);
         Fruto fruto4 = new Fruto();
-        addObject(fruto4,885,194);
+        addObject(fruto4,146,574);
         Fruto fruto5 = new Fruto();
-        addObject(fruto5,969,363);
+        addObject(fruto5,806,318);
         Fruto fruto6 = new Fruto();
-        addObject(fruto6,527,559);
-        Fruto fruto7 = new Fruto();
-        addObject(fruto7,920,632);
-
-        fruto2.setLocation(358,454);
-        fruto3.setLocation(418,225);
-        fruto2.setLocation(348,562);
+        addObject(fruto6,997,607);
+        
+        // inicia e posiciona os obstaculos
+        Obstaculo obstaculo = new Obstaculo();
+        addObject(obstaculo,426,65);
+        Obstaculo obstaculo2 = new Obstaculo();
+        addObject(obstaculo2,443,466);
+        Obstaculo obstaculo3 = new Obstaculo();
+        addObject(obstaculo3,965,436);
     }
 }
