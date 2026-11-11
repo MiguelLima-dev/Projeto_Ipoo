@@ -8,15 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BichoPapao extends Inimigo
 {   
-    // guarda para qual sentido o bicho papao anda
-    private boolean andandoParaDireita;
-
+    /**
+     * Construtor de objetos para a classe BichoPapao.
+     */
     public BichoPapao() {
         // idle: 11 imagens| walk: 10 imagens| velocidade: 1| dano: 2
         super("BichoPapao_idle", 11, "BichoPapao_walk", 10, 1, 2);
-
-        // o bicho papao comeca andando para direita
-        andandoParaDireita = true;
     }
 
     /**
@@ -30,22 +27,24 @@ public class BichoPapao extends Inimigo
     }
 
     /**
-     * O bicho papao se move de um lado para o outro no eixo x
+     * O método busca onde estão os frutos no mapa e faz o BichoPapao
+     * coleta-los.
      */
     private void tratarMovimento() {
-        // verifica se o bichopapao se encostou na beira do mundo,
-        // se sim, muda o sentido do movimento
-        if (isAtEdge()) {
-    
-            andandoParaDireita = !andandoParaDireita;
+        // busca todos os objetos da classe 'Fruto' no mapa
+        java.util.List frutos = getWorld().getObjects(Fruto.class);
+        
+        // se houver pelo menos um fruto o bicho papao vai até suas coordenadas
+        if(!frutos.isEmpty())
+        {
+            Fruto itemAlvo = (Fruto) frutos.get(0);
+            turnTowards(itemAlvo.getX(), itemAlvo.getY());
+            move(1);
         }
         
-        // move o bichopapao conforme o sentido do movimento
-        if (andandoParaDireita) {
-            mover(obterVel(), 0);
-        }
-        else { 
-            mover(-obterVel(), 0);
+        if(isTouching(Fruto.class))
+        {
+            
         }
     }
 }

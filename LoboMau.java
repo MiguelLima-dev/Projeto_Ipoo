@@ -8,11 +8,17 @@ import greenfoot.*;
  */
 public class LoboMau extends Inimigo
 {
-    // guarda para qual sentido o bicho papao anda
+    // guarda para qual sentido o lobo mau anda
     private boolean andandoParaDireita;
 
+    /**
+     * Construtor de objetos para a classe LoboMau.
+     */
     public LoboMau() 
     {
+        // idle: 11 imagens| walk: 10 imagens| velocidade: 1| dano: 2
+        super("Lobisomem_idle", 11, "Lobisomem_walk", 10, 1, 2);
+        
         // o lobo mau comeca andando para direita
         andandoParaDireita = true;
     }
@@ -28,17 +34,16 @@ public class LoboMau extends Inimigo
     }
 
     /**
-     * O bicho papao se move de um lado para o outro no eixo x
+     * O lobo mau se move de um lado para o outro no eixo x.
      */
     private void tratarMovimento() {
-        // verifica se o bichopapao se encostou na beira do mundo,
+        // verifica se o lobomau se encostou na beira do mundo,
         // se sim, muda o sentido do movimento
         if (isAtEdge()) {
-    
             andandoParaDireita = !andandoParaDireita;
         }
         
-        // move o bichopapao conforme o sentido do movimento
+        // move o lobomau conforme o sentido do movimento
         if (andandoParaDireita) {
             mover(obterVel(), 0);
         }

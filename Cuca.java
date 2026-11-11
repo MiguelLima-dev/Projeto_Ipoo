@@ -1,3 +1,6 @@
+import greenfoot.*;
+import greenfoot.Actor;
+
 /**
  * O inimigo Cuca segue o inimigo no mapa.
  * 
@@ -7,10 +10,12 @@
 public class Cuca extends Inimigo
 {
     /**
-     * Constructor for objects of class Cuca
+     * Construtor de objetos para a classe Cuca.
      */
     public Cuca()
     {
+        // idle: 11 imagens| walk: 10 imagens| velocidade: 1| dano: 2
+        super("Cuca_idle", 11, "Cuca_walk", 10, 1, 2);
     }
 
     /**
@@ -23,8 +28,20 @@ public class Cuca extends Inimigo
         tratarMovimento();
     }
     
+    /**
+     * O método busca o fazendeiro e faz com que a Cuca se movimente em direção
+     * a ele idependente da sua distância ou posição no mapa.
+     */
     private void tratarMovimento()
     {
-        
+        // busca todos os objetos da classe Fazendeiro existentes no mundo
+        java.util.List alvos = getWorld().getObjects(Fazendeiro.class);
+    
+        if (!alvos.isEmpty()) 
+        {
+            Actor alvo = (Actor) alvos.get(0); // armazena em 'alvo' o primeiro (0) jogador a ser encontrado no mapa 
+            turnTowards(alvo.getX(), alvo.getY()); 
+            move(1); // velocidade 
+        }
     }
 }

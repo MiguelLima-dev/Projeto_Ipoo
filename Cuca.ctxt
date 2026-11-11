@@ -1,10 +1,13 @@
 #BlueJ class context
 comment0.target=Cuca
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Cuca\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ O\ inimigo\ Cuca\ segue\ o\ inimigo\ no\ mapa.\r\n\ \r\n\ @author\ helena\r\n\ @version\ 10-11\r\n
 comment1.params=
 comment1.target=Cuca()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Cuca\r\n
-comment2.params=y
-comment2.target=int\ sampleMethod(int)
-comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
-numComments=3
+comment1.text=\r\n\ Construtor\ de\ objetos\ para\ a\ classe\ Cuca.\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Cuca\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=
+comment3.target=void\ tratarMovimento()
+comment3.text=\r\n\ O\ m\u00E9todo\ busca\ o\ fazendeiro\ e\ faz\ com\ que\ a\ Cuca\ se\ movimente\ em\ dire\u00E7\u00E3o\r\n\ a\ ele\ idependente\ da\ sua\ dist\u00E2ncia\ ou\ posi\u00E7\u00E3o\ no\ mapa.\r\n
+numComments=4
