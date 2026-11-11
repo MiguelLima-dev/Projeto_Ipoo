@@ -36,10 +36,10 @@ Indicar sim ou não, se o jogo atende ao requisito J4.8 (Deve existir alguma for
 R.: Sim
 
 Nomes dos arquivos utilizados que atendem ao requisito J4.9 (O jogo deve ter sons de efeitos sonoros e deve usar, pelo menos, três arquivos de áudio diferentes).
-R.: 
+R.: alert.wav
 
 Nome(s) do(s) arquivo(s) utilizado(s) que atende(m) ao requisito J4.10 (O jogo deve ter som de fundo (pelo menos um)).
-R.: 
+R.: forest-ambience.wav
  
 
 REQUISITOS DE IMPLEMENTAÇÃO
