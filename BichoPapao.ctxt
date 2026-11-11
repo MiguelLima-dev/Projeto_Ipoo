@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=BichoPapao
-comment0.text=\n\ O\ inimigo\ BichoPapao\ pega\ os\ itens\ que\ aparecem\ no\ mapa.\n\n\ @author\ helena\n\ @version\ 11-11\n
+comment0.text=\n\ O\ inimigo\ BichoPapao\ pega\ os\ itens\ que\ aparecem\ no\ mapa.\n
 comment1.params=
 comment1.target=BichoPapao()
 comment1.text=\n\ Construtor\ de\ objetos\ para\ a\ classe\ BichoPapao.\n

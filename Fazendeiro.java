@@ -23,13 +23,20 @@ public class Fazendeiro extends Entidade
         tratarMovimento();
         // trata a animacao idle do fazendeiro
         super.act();
-        // tenta pegar o fruto e adiciona na pontuação se for possível
-        if(tentarPegarFruto())
-        {
+        // trata a coleta do fruto
+        tratarColetaFruto();
+    }
+    
+    /**
+     * Trata a coleta do fruto, caso
+     * um fruto seja coletado, incrementa a
+     * pontuacao.
+    */
+    private void tratarColetaFruto() {
+        if (tentarPegarFruto()) {
             pontuacao += 1;
         }
     }
-
     /**
      * Move o fazendeiro conforme as setas do teclado.
      */

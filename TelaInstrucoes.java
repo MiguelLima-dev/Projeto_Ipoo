@@ -1,37 +1,29 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TelaInstrucoes here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Eh a classe da tela que contem as intrucoes de jogo,
+ * ela tambem pode iniciar o jogo
  */
 public class TelaInstrucoes extends Tela
 {
 
     /**
-     * Constructor for objects of class TelaInstrucoes.
-     * 
+     * Constroi a tela iniciao com  dada imagem
      */
     public TelaInstrucoes()
     {
         super("telaInstrucoes.png");
-        prepare();
     }
 
+    /**
+     * Trata as teclas de alteraçao de tela
+     * espaco inicia a primeira fase
+     */
     @Override
     protected void tratarTecla(String tecla) {
         if ("space".equals(tecla)) {
             pararMusica();
             Greenfoot.setWorld(new FaseUm());
         }
-    }
-    
-    /**
-     * Prepara o mundo para o início do programa.
-     * Ou seja: criar os objetos iniciais e adicioná-los ao mundo.
-     */
-    private void prepare()
-    {
     }
 }

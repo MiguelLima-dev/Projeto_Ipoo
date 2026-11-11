@@ -2,10 +2,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 
 /**
- * Write a description of class FaseUm here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Essa classe eh a primeria fase do jogo, contem tres inimigos e alguns
+ * frutos coletaveis que renascem.
+ * A saida eh aberta depois de um certo tempo
  */
 public class FaseUm extends World
 {   
@@ -29,12 +28,11 @@ public class FaseUm extends World
     private Texto placar;
 
     /**
-     * Constructor for objects of class FaseUm.
-     * 
+     * Constroi a fase um
      */
     public FaseUm()
     {
-        super(1200, 900, 1);
+        super(1200, 700, 1);
         setBackground(new GreenfootImage("faseUm.png"));
 
         // a hora inicia em 23:00
@@ -92,7 +90,7 @@ public class FaseUm extends World
     private void tentarCriarSaida(){
         //Verifica se já deu 23:45 para liberar a saida
         if(relogio.obterMinutosPassados() >= saidaMinutos && !saidaAberta){
-            addObject(new Texto("SAÍDA LIBERADA!"), 690, 50);
+            addObject(new Texto("SAÍDA LIBERADA!"), getWidth()/2, 50);
             addObject(new Saida(), 1170, 312);
             saidaAberta = true;
         }
@@ -104,7 +102,7 @@ public class FaseUm extends World
      */
     private void finalizarJogo(String mensagem){
         fimDeJogo = true;
-        addObject(new Texto(mensagem), 700, 450);
+        addObject(new Texto(mensagem), getWidth()/2, getHeight()/2);
         Greenfoot.stop();
     }
     
@@ -140,35 +138,13 @@ public class FaseUm extends World
     }
     
     /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
+     * Cria os objeto iniciais no mundo
      */
     private void prepare()
     {
-
-        // inicia e posiciona o jogador
-        jogador = new Fazendeiro();
-        addObject(jogador,284,576);
-        // inicia e posiciona o placar
-        placar = new Texto(String.valueOf(jogador.obterPontuacao()));
-        addObject(placar, 1050, 62);
-        // inicia e posiciona o horario
-        horario = new Texto(relogio.obterHorario());
-        addObject(horario, 165, 47);
-        // inicia e posiciona os frutos
-        Cuca cuca = new Cuca(jogador);
-        addObject(cuca,592,102);
-        cuca.setLocation(592,102);
-
-        LoboMau loboMau = new LoboMau();
-        addObject(loboMau,646,236);
-
-        BichoPapao bichoPapao = new BichoPapao();
-        addObject(bichoPapao,135,322);
-
         // inicia e posiciona os frutos
         Fruto fruto = new Fruto();
-        addObject(fruto,829,60);
+        addObject(fruto,901,104);
         Fruto fruto2 = new Fruto();
         addObject(fruto2,681,612);
         Fruto fruto3 = new Fruto();
@@ -179,6 +155,27 @@ public class FaseUm extends World
         addObject(fruto5,806,318);
         Fruto fruto6 = new Fruto();
         addObject(fruto6,997,607);
+        
+         // inicia e posiciona o jogador
+        jogador = new Fazendeiro();
+        addObject(jogador,284,576);
+        
+        // inicia e posiciona os frutos
+        Cuca cuca = new Cuca(jogador);
+        addObject(cuca,592,102);
+
+        LoboMau loboMau = new LoboMau();
+        addObject(loboMau,646,236);
+
+        BichoPapao bichoPapao = new BichoPapao();
+        addObject(bichoPapao,135,322);
+        
+        // inicia e posiciona o placar
+        placar = new Texto(String.valueOf(jogador.obterPontuacao()));
+        addObject(placar, 1050, 62);
+        // inicia e posiciona o horario
+        horario = new Texto(relogio.obterHorario());
+        addObject(horario, 165, 47);
         
         // inicia e posiciona os obstaculos
         Obstaculo obstaculo = new Obstaculo();

@@ -1,10 +1,8 @@
 import greenfoot.*;
 
 /**
- * O inimigo LoboMau percorre o mapa na horizontal.
- * 
- * @author helena 
- * @version 10-11
+ * O inimigo LoboMau percorre o mapa na horizontal,
+ * se movendo de um lado para o outro.
  */
 public class LoboMau extends Inimigo
 {

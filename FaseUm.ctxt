@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=FaseUm
-comment0.text=\n\ Write\ a\ description\ of\ class\ FaseUm\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Essa\ classe\ eh\ a\ primeria\ fase\ do\ jogo,\ contem\ tres\ inimigos\ e\ alguns\n\ frutos\ coletaveis\ que\ renascem.\n\ A\ saida\ eh\ aberta\ depois\ de\ um\ certo\ tempo\n
 comment1.params=
 comment1.target=FaseUm()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ FaseUm.\n\ \n
+comment1.text=\n\ Constroi\ a\ fase\ um\n
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\n\ A\ cada\ act,\ o\ mundo\ tenta\ fazers\ um\ fruto\ crescer\n
@@ -24,5 +24,5 @@ comment7.target=void\ tratarFimDeJogo()
 comment7.text=\n\ Verifica\ as\ condi\u00E7\u00F5es\ de\ fim\ de\ jogo,\ sao\ elas\:\n\ tempo\ esgotado,\ jogador\ pego\ por\ um\ inimigo\ e\ jogador\ escapando\n
 comment8.params=
 comment8.target=void\ prepare()
-comment8.text=\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\n\ That\ is\:\ create\ the\ initial\ objects\ and\ add\ them\ to\ the\ world.\n
+comment8.text=\n\ Cria\ os\ objeto\ iniciais\ no\ mundo\n
 numComments=9

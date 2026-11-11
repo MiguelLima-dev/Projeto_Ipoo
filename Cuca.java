@@ -3,9 +3,6 @@ import greenfoot.Actor;
 
 /**
  * O inimigo Cuca segue o inimigo no mapa.
- * 
- * @author helena
- * @version 10-11
  */
 public class Cuca extends Inimigo
 {   
@@ -13,6 +10,7 @@ public class Cuca extends Inimigo
     private Fazendeiro alvo;
     // usada para controlar quando a cuca se move
     private boolean seMoveNesseAct;
+    
     /**
      * Construtor de objetos para a classe Cuca. Recebe o jogado que ela
      * persegue como argumento

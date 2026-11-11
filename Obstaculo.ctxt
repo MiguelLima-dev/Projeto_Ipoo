@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Obstaculo
-comment0.text=\n\ Write\ a\ description\ of\ class\ Obstaculo\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Classe\ do\ obstaculo\ que\ serve\ para\ impedir\ o\ caminho\ de\ uma\ entidade\n
 comment1.params=
 comment1.target=Obstaculo()
-comment1.text=\n\ Cria\ um\ obstaculo\ com\ uma\ dada\ imagem\n\ @param\ nomeImagem\ nome\ da\ imagem\ do\ obstaculo\n
+comment1.text=\n\ Cria\ um\ obstaculo\ com\ uma\ dada\ imagem\n
 numComments=2

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Tela
-comment0.text=\n\ Write\ a\ description\ of\ class\ Tela\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Eh\ a\ superclasse\ que\ guarda\ a\ informa\u00E7ao\ comum\ a\ todas\ as\ telas\ do\ jogo\n
 comment1.params=caminhoImagem
 comment1.target=Tela(java.lang.String)
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Tela.\n
@@ -8,6 +8,7 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=tecla
 comment3.target=void\ tratarTecla(java.lang.String)
+comment3.text=\n\ Eh\ feita\ para\ para\ ser\ sobreescrita\ pelas\ subclasses,\n\ deve\ tratar\ o\ uso\ de\ botoes\ para\ alterar\ a\ tela\n
 comment4.params=
 comment4.target=void\ started()
 comment4.text=\n\ Comeca\ a\ tocar\ a\ musica\ quando\ entra\ em\ uma\ tela\n

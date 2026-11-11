@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=LoboMau
-comment0.text=\n\ O\ inimigo\ LoboMau\ percorre\ o\ mapa\ na\ horizontal.\n\ \n\ @author\ helena\ \n\ @version\ 10-11\n
+comment0.text=\n\ O\ inimigo\ LoboMau\ percorre\ o\ mapa\ na\ horizontal,\n\ se\ movendo\ de\ um\ lado\ para\ o\ outro.\n
 comment1.params=
 comment1.target=LoboMau()
 comment1.text=\n\ Construtor\ de\ objetos\ para\ a\ classe\ LoboMau.\n

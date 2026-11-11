@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Cuca
-comment0.text=\n\ O\ inimigo\ Cuca\ segue\ o\ inimigo\ no\ mapa.\n\ \n\ @author\ helena\n\ @version\ 10-11\n
+comment0.text=\n\ O\ inimigo\ Cuca\ segue\ o\ inimigo\ no\ mapa.\n
 comment1.params=jogadorAlvo
 comment1.target=Cuca(Fazendeiro)
 comment1.text=\n\ Construtor\ de\ objetos\ para\ a\ classe\ Cuca.\ Recebe\ o\ jogado\ que\ ela\n\ persegue\ como\ argumento\n\ @param\ jogadorAlvo\ o\ jogador\ que\ sera\ perseguido\n
