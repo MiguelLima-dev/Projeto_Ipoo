@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=BichoPapao
-comment0.text=\r\n\ O\ inimigo\ BichoPapao\ pega\ os\ itens\ que\ aparecem\ no\ mapa.\r\n\r\n\ @author\ helena\r\n\ @version\ 10-11\r\n
+comment0.text=\r\n\ O\ inimigo\ BichoPapao\ pega\ os\ itens\ que\ aparecem\ no\ mapa.\r\n\r\n\ @author\ helena\r\n\ @version\ 11-11\r\n
 comment1.params=
 comment1.target=BichoPapao()
 comment1.text=\r\n\ Construtor\ de\ objetos\ para\ a\ classe\ BichoPapao.\r\n
@@ -9,5 +9,9 @@ comment2.target=void\ act()
 comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ BichoPapao\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment3.params=
 comment3.target=void\ tratarMovimento()
-comment3.text=\r\n\ O\ m\u00E9todo\ busca\ onde\ est\u00E3o\ os\ frutos\ no\ mapa\ e\ faz\ o\ BichoPapao\r\n\ ir\ at\u00E9\ eles.\r\n
-numComments=4
+comment4.params=
+comment4.target=void\ buscarFruto()
+comment4.text=\r\n\ O\ m\u00E9todo\ busca\ um\ fruto\ para\ ser\ perseguido\ no\ mapa.\r\n
+comment5.params=
+comment5.target=void\ perseguirFruto()
+numComments=6
