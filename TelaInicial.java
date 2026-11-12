@@ -1,17 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TelaInicial here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Tela inicial do jogo, leva para primeira fase ou para a
+ * tela de instrucoes
  */
 public class TelaInicial extends Tela
 {
 
     /**
-     * Constructor for objects of class TelaInicial.
-     * 
+     * Constroi a tela inicial com a imagem indicada
      */
     public TelaInicial()
     {  
@@ -19,6 +16,11 @@ public class TelaInicial extends Tela
         
     }
     
+    /**
+     * Trata as teclas de alteraçao de tela
+     * enter leva para tela de instrucoes
+     * espaco inicia a primeira fase
+     */
     @Override
     protected void tratarTecla(String tecla) {
         if ("enter".equals(tecla)) {

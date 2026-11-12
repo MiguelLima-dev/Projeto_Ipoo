@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Tela here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Eh a superclasse que guarda a informaçao comum a todas as telas do jogo
  */
 public class Tela extends World
 {
@@ -16,7 +13,7 @@ public class Tela extends World
      */
     public Tela(String caminhoImagem)
     {    
-        super(1200, 900, 1); 
+        super(1200, 700, 1); 
         // define o plano de fn
         setBackground(new GreenfootImage(caminhoImagem));
         // define o volume da musica para 70
@@ -30,7 +27,11 @@ public class Tela extends World
             tratarTecla(tecla);
         }
     }
-
+    
+    /**
+     * Eh feita para para ser sobreescrita pelas subclasses,
+     * deve tratar o uso de botoes para alterar a tela
+     */
     protected void tratarTecla(String tecla) {
 
     }

@@ -12,8 +12,8 @@ public class Fazendeiro extends Entidade
     private int pontuacao;
     
     public Fazendeiro() {
-        // idle: 11 imagens| walk: 9 imagens| velocidade 1
-        super("Fazendeiro_idle", 11, "Fazendeiro_walk", 9, 2);
+        // idle: 11 imagens| walk: 9 imagens| velocidade 2
+        super("Fazendeiro_idle", 11, "Fazendeiro_walk", 10, 2);
         // inicia com 0 pontos
         pontuacao = 0;
     }
@@ -23,13 +23,20 @@ public class Fazendeiro extends Entidade
         tratarMovimento();
         // trata a animacao idle do fazendeiro
         super.act();
-        // tenta pegar o fruto e adiciona na pontuação se for possível
-        if(tentarPegarFruto())
-        {
+        // trata a coleta do fruto
+        tratarColetaFruto();
+    }
+    
+    /**
+     * Trata a coleta do fruto, caso
+     * um fruto seja coletado, incrementa a
+     * pontuacao.
+    */
+    private void tratarColetaFruto() {
+        if (tentarPegarFruto()) {
             pontuacao += 1;
         }
     }
-
     /**
      * Move o fazendeiro conforme as setas do teclado.
      */
@@ -56,7 +63,7 @@ public class Fazendeiro extends Entidade
      * @return true se encostar no inimigo, false se não encostar
      */
     public  boolean encostouNoInimigo(){
-        return isTouching(BichoPapao.class);
+        return isTouching(Inimigo.class);
     }
     
     /**

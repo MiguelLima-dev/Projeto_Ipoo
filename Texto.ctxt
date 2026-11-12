@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Texto
+comment0.text=\n\ Esse\ ator\ exibe\ um\ texto\ em\ branco\ na\ tela\n
+comment1.params=texto
+comment1.target=Texto(java.lang.String)
+comment1.text=\n\ Exibe\ um\ texto.\n\ @param\ texto\ o\ texto\ a\ ser\ exibido\n
+comment2.params=texto
+comment2.target=void\ atualizarTexto(java.lang.String)
+comment2.text=\n\ Exibe\ um\ novo\ texto,\ nao\ troca\ caso\ seja\ o\ mesmo\n\ @param\ o\ novo\ texto\ a\ ser\ exibido\n
+comment3.params=texto
+comment3.target=void\ escreverTexto(java.lang.String)
+comment3.text=\n\ Escreve\ o\ texto\ no\ actor\n
+numComments=4

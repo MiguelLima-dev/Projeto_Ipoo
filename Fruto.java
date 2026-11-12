@@ -2,10 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Eh um fruto coletavel pelo jogador, utilizado como marca de pontuacao.
- * 
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Ele brota com uma animacao.
  */
 public class Fruto extends Actor
 {
@@ -15,7 +12,7 @@ public class Fruto extends Actor
     private static final int[] duracaoImagem = {10, 25, 20, 20, 15, 10, 6};
     // indice da imagem atual
     private int indiceImagemAtual;
-    // quantos frames se passaram desde que a p    
+    // quantos frames se passaram desde que o fruto foi coletado ou criado    
     private int frames;
     // se o fruto esta disponivel
     private boolean coletavel;
@@ -34,8 +31,7 @@ public class Fruto extends Actor
     }
     
     /**
-     * Act - do whatever the Fruto wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Tenta brotar a cada act
      */
     public void act()
     {

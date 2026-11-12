@@ -108,15 +108,18 @@ public class Entidade extends Actor
     /**
      * Move a entidade (dx, dy), parando ao colidir com obstaculos.
      * Cada eixo eh testado separadamente, entao a entidade desliza
-     * pela parade ao invez de grudar nela. Tambem atuliza o estado
+     * pela parade ao invez de grudar nela. Tambem atuliaza o estado
      * "andando", trocando entre as animacoes de parede e andando.
+     * Retorna se a entidade se moveu
      * @param dx O quanto a entidade se move no eixo x
      * @param dy O quanto a entidade se move no eixo y
+     * @return true se a entidade se moveu, false caso contrario
      */
-    protected void mover(int dx, int dy) {
+    protected boolean mover(int dx, int dy) {
+        int xInicial = getX(), yInicial =  getY();
         boolean estavaAndando = andando;
         andando = (dx != 0 || dy != 0);
-
+    
         // deixou ou comecou a andar, reinicia a animacao
         if (andando != estavaAndando) {
             indiceImagemAtual = 0;
@@ -134,7 +137,10 @@ public class Entidade extends Actor
         int yAnterior = getY();
         setLocation(getX(), getY() + dy);
         if (isTouching(Obstaculo.class)) setLocation(getX(), yAnterior);
-    }
+        
+        // retorna se a posicao mudou
+        return getX() != xInicial || getY() != yInicial;
+     }
     
     /**
      * Tenta pegar o fruto que a entidade está tocando.
