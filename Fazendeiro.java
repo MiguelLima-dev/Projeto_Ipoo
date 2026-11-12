@@ -35,6 +35,7 @@ public class Fazendeiro extends Entidade
     private void tratarColetaFruto() {
         if (tentarPegarFruto()) {
             pontuacao += 1;
+            Greenfoot.playSound("fazendeiro_coletando_fruto.wav");
         }
     }
     /**
