@@ -77,8 +77,7 @@ R.: Sim
 COMENTÁRIOS (OPCIONAIS)
 
 Algum comentário sobre o tema do trabalho?
-R.: Os inimigo do jogo são inspirados no folclore brasileiro, o fazendeiro(jogador) tem que coletar os frutos enquanto toma cuidado para não ser pelo pelo
-bicho papão, cuca ou lobo mau, e também escapar antes da meia noite.
+R.: Os inimigo do jogo são inspirados no folclore brasileiro, o fazendeiro(jogador) tem que coletar os frutos enquanto toma cuidado para não ser pego pelo bicho papão, cuca ou lobo mau, e também escapar antes da meia noite.
 
 Algum comentário sobre o Greenfoot?
 
