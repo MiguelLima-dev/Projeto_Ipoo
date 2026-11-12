@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.GreenfootSound;
 
 /**
  * Eh um fruto coletavel pelo jogador, utilizado como marca de pontuacao.
@@ -18,6 +19,8 @@ public class Fruto extends Actor
     private boolean coletavel;
     // se a planta esta brotando
     private boolean brotando;
+    // para ajustar o volume do audio
+    private GreenfootSound som;
     
     public Fruto() {
         // a imagem comeca no primeiro indice
@@ -28,6 +31,9 @@ public class Fruto extends Actor
         coletavel = false;
         // inicia a planta sem brotar
         brotando = false;
+        // cria um objeto da classe GreenFootSound para ajustar o volume
+        som = new GreenfootSound("alert.wav");
+        som.setVolume(70);
     }
     
     /**
@@ -64,7 +70,7 @@ public class Fruto extends Actor
                 // o fruto nao esta mais crescendo
                 brotando = false;
                 // toca o som
-                Greenfoot.playSound("alert.wav");
+                som.play();
             }
         }
     }

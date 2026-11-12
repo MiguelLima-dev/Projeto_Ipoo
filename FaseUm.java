@@ -125,6 +125,7 @@ public class FaseUm extends World
         //Confere se o jogador encostou no inimigo
         if(jogador.encostouNoInimigo()){
             //finaliza o jogo
+            verificarInimigoColidido();
             finalizarJogo("GAME OVER!");
             return;
         }
@@ -134,6 +135,21 @@ public class FaseUm extends World
             //Finaliza o jogo
             finalizarJogo("Você conseguiu escapar a tempo!");
             return;
+        }
+    }
+    
+    /**
+     * Guarda o inimigo que o fazendeiro colidiu e confere qual foi
+     * para emitir seu respectivo som.
+     */
+    private void verificarInimigoColidido()
+    {
+        Inimigo inimigo = (Inimigo) jogador.obterInimigoEncostado();
+        
+        if (inimigo instanceof Cuca){
+            Greenfoot.playSound("cuca_rindo.wav");
+        } else if (inimigo instanceof LoboMau){
+            Greenfoot.playSound("lobo_mau_uivando.wav");
         }
     }
     

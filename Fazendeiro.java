@@ -35,6 +35,7 @@ public class Fazendeiro extends Entidade
     private void tratarColetaFruto() {
         if (tentarPegarFruto()) {
             pontuacao += 1;
+            Greenfoot.playSound("fazendeiro_coletando_fruto.wav");
         }
     }
     /**
@@ -72,5 +73,14 @@ public class Fazendeiro extends Entidade
      */
     public boolean chegouNaSaida(){
         return isTouching(Saida.class);
+    }
+    
+    /**
+     * Retorna o inimigo que o fazendeiro colidiu
+     * @return o inimigo que o fazendeiro colidiu
+     */
+    public Inimigo obterInimigoEncostado()
+    {
+        return (Inimigo) getOneIntersectingObject(Inimigo.class);
     }
 }

@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.target=Inimigo
-comment0.text=\n\ Superclasse\ dos\ inimigos\ do\ jogo\n
+comment0.text=\r\n\ Superclasse\ dos\ inimigos\ do\ jogo\r\n
 comment1.params=prefixoParado\ nImagensParado\ prefixoAndando\ nImagensAndando\ vel
 comment1.target=Inimigo(java.lang.String,\ int,\ java.lang.String,\ int,\ int)
-comment1.text=\n\ Cria\ um\ inimigo,\ partindo\ do\ construtor\ de\ entidade\n
+comment1.text=\r\n\ Cria\ um\ inimigo,\ partindo\ do\ construtor\ de\ entidade\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\n\ age\ como\ uma\ entidade\n
+comment2.text=\r\n\ age\ como\ uma\ entidade\r\n
 comment3.params=alvo
 comment3.target=void\ moverEmDirecaoAoAlvo(greenfoot.Actor)
-comment3.text=\n\ Move\ o\ inimigo\ em\ direcao\ a\ um\ alvo\ (um\ actor)\n\ @param\ alvo\ o\ actor\ alvo\n
+comment3.text=\r\n\ Move\ o\ inimigo\ em\ direcao\ a\ um\ alvo\ (um\ actor)\r\n\ @param\ alvo\ o\ actor\ alvo\r\n
 numComments=4

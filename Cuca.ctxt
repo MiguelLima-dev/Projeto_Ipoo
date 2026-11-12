@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.target=Cuca
-comment0.text=\n\ O\ inimigo\ Cuca\ segue\ o\ inimigo\ no\ mapa.\n
+comment0.text=\r\n\ O\ inimigo\ Cuca\ segue\ o\ inimigo\ no\ mapa.\r\n
 comment1.params=jogadorAlvo
 comment1.target=Cuca(Fazendeiro)
-comment1.text=\n\ Construtor\ de\ objetos\ para\ a\ classe\ Cuca.\ Recebe\ o\ jogado\ que\ ela\n\ persegue\ como\ argumento\n\ @param\ jogadorAlvo\ o\ jogador\ que\ sera\ perseguido\n
+comment1.text=\r\n\ Construtor\ de\ objetos\ para\ a\ classe\ Cuca.\ Recebe\ o\ jogado\ que\ ela\r\n\ persegue\ como\ argumento\r\n\ @param\ jogadorAlvo\ o\ jogador\ que\ sera\ perseguido\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\n\ Act\ -\ do\ whatever\ the\ Cuca\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Cuca\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment3.params=
 comment3.target=void\ tratarMovimento()
-comment3.text=\n\ O\ m\u00E9todo\ busca\ o\ fazendeiro\ e\ faz\ com\ que\ a\ Cuca\ se\ movimente\ em\ dire\u00E7\u00E3o\n\ a\ ele\ independente\ da\ sua\ dist\u00E2ncia\ ou\ posi\u00E7\u00E3o\ no\ mapa.\n\ Move-se\ uma\ vez\ sim,\ uma\ vez\ nao.\n
+comment3.text=\r\n\ O\ m\u00E9todo\ busca\ o\ fazendeiro\ e\ faz\ com\ que\ a\ Cuca\ se\ movimente\ em\ dire\u00E7\u00E3o\r\n\ a\ ele\ independente\ da\ sua\ dist\u00E2ncia\ ou\ posi\u00E7\u00E3o\ no\ mapa.\r\n\ Move-se\ uma\ vez\ sim,\ uma\ vez\ nao.\r\n
 numComments=4
