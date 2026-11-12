@@ -74,4 +74,13 @@ public class Fazendeiro extends Entidade
     public boolean chegouNaSaida(){
         return isTouching(Saida.class);
     }
+    
+    /**
+     * Retorna o inimigo que o fazendeiro colidiu
+     * @return o inimigo que o fazendeiro colidiu
+     */
+    public Inimigo obterInimigoEncostado()
+    {
+        return (Inimigo) getOneIntersectingObject(Inimigo.class);
+    }
 }
