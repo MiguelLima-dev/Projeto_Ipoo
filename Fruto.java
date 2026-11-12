@@ -20,7 +20,7 @@ public class Fruto extends Actor
     // se a planta esta brotando
     private boolean brotando;
     // para ajustar o volume do audio
-    private GreenfootSound som;
+    private static final GreenfootSound som = new GreenfootSound("fruta_brotando.wav");
     
     public Fruto() {
         // a imagem comeca no primeiro indice
@@ -31,8 +31,7 @@ public class Fruto extends Actor
         coletavel = false;
         // inicia a planta sem brotar
         brotando = false;
-        // cria um objeto da classe GreenFootSound para ajustar o volume
-        som = new GreenfootSound("alert.wav");
+        // altera o volume do som
         som.setVolume(70);
     }
     
