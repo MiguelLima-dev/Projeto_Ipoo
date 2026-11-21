@@ -14,38 +14,38 @@ REQUISITOS DE JOGABILIDADE
 - Preencham as respostas dos itens abaixo de acordo com a implementação de vocês.
 
 Nome da classe que atende ao requisito J4.1 (Deve existir um mundo, que podemos chamar de tela inicial, que mostra o nome do jogo e instruções de como jogar).
-R.: 
+R.: TelaInicial, que mostra o nome do jogo e TelaInstrucoes mostra as instruções do jogo
 
 Nome da classe que atende ao requisito J4.2 (Deve existir um mundo que é a primeira fase do jogo).
-R.: 
+R.: FaseUm
 
 Indicar sim ou não, se o jogo atende ao requisito J4.3 (Deve ser possível terminar o jogo com vitória ou derrota e isso deve ser informado de alguma forma para o jogador).
-R.: 
+R.: Sim
 
 Nome da classe que atende ao requisito J4.4 (Deve existir um ator que é controlado pelo jogador).
-R.: 
+R.: Fazendeiro
 
 Nomes das classes que atendem ao requisito J4.5 (Devem existir pelo menos dois tipos de atores que representam inimigos que precisem ser atacados ou evitados).
-R.: 
+R.: BichoPapao, Cuca e LoboMau
 
 Nome da classe que atende ao requisito J4.6 (Deve existir pelo menos um tipo de ator que representa um item que o jogador poderá coletar no jogo).
-R.: 
+R.: Fruto
 
 Nome da classe que atende ao requisito J4.7 (Deve existir pelo menos um tipo de ator que representa um obstáculo para o jogador).
-R.: 
+R.: Obstaculo
 
 Indicar sim ou não, se o jogo atende ao requisito J4.8 (Deve existir alguma forma de pontuação e deve ser possível que o jogador vença o jogo com diferentes pontuações. A pontuação deve aparecer na tela do jogo durante toda a partida).
-R.: 
+R.: Sim
 
 Nomes dos arquivos utilizados que atendem ao requisito J4.9 (O jogo deve ter sons de efeitos sonoros e deve usar, pelo menos, três arquivos de áudio diferentes).
-R.: 
+R.: "fruta_brotando.wav" "fazendeiro_coletando_fruto.wav" "bicho_papao_comendo_fruto.wav" "cuca_rindo.wav" "lobo_mau_uivando.wav"
 
 Nome(s) do(s) arquivo(s) utilizado(s) que atende(m) ao requisito J4.10 (O jogo deve ter som de fundo (pelo menos um)).
-R.: 
+R.: forest-ambience.wav
 
 
 Nomes das classes que atendem ao requisito J5.1 (A tela inicial feita na primeira entrega será dividida em dois mundos: tela inicial e tela de instruções. Através da tela inicial deve ser possível disparar o início do jogo ou disparar a tela com as instruções do jogo).
-R.: 
+R.: TelaInicial e TelaInstrucoes
 
 Nome da classe que atende ao requisito J5.2 (Deve existir um mundo que é a segunda fase do jogo).
 R.: 
