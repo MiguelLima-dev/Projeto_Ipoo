@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Entidade
-comment0.text=\n\ Classe\ entidade,\ guarda\ as\ informacoes\ comuns\ a\ todos\ os\ personagens\ animados\n\ do\ jogo.\n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Classe\ entidade,\ guarda\ as\ informacoes\ comuns\ a\ todos\ os\ personagens\ animados\n\ do\ jogo.\n
 comment1.params=prefixoParado\ nImagensParado\ prefixoAndando\ nImagensAndando\ vel
 comment1.target=Entidade(java.lang.String,\ int,\ java.lang.String,\ int,\ int)
 comment1.text=\n\ Construtor\ de\ uma\ entidade,\ recebe\ o\ prefixo\ das\ imagens\ da\ entidade\n\ parada\ e\ andando,\ tambem\ o\ numero\ de\ imagens\ de\ cada\ tipo\ de\ imagem,\n\ recebe\ tambem\ a\ velocidade\ com\ que\ a\ entidade\ se\ move\n\n\ @param\ prefixoParado\ Prefixo\ das\ imagens\ da\ entidade\ parada\n\ @param\ nImagensParado\ Numero\ de\ imagens\ da\ entidade\ parada\n\ @param\ prefixoAndando\ Prefixo\ das\ imagens\ da\ entidade\ andando\n\ @param\ nImagensAndando\ Numero\ de\ imagens\ da\ entidade\ andando\n\ @param\ vel\ Velocidade\ com\ que\ a\ entidade\ se\ move\n
@@ -15,7 +15,7 @@ comment4.target=boolean\ mover(int,\ int)
 comment4.text=\n\ Move\ a\ entidade\ (dx,\ dy),\ parando\ ao\ colidir\ com\ obstaculos.\n\ Cada\ eixo\ eh\ testado\ separadamente,\ entao\ a\ entidade\ desliza\n\ pela\ parade\ ao\ invez\ de\ grudar\ nela.\ Tambem\ atuliaza\ o\ estado\n\ "andando",\ trocando\ entre\ as\ animacoes\ de\ parede\ e\ andando.\n\ Retorna\ se\ a\ entidade\ se\ moveu\n\ @param\ dx\ O\ quanto\ a\ entidade\ se\ move\ no\ eixo\ x\n\ @param\ dy\ O\ quanto\ a\ entidade\ se\ move\ no\ eixo\ y\n\ @return\ true\ se\ a\ entidade\ se\ moveu,\ false\ caso\ contrario\n
 comment5.params=dx\ dy
 comment5.target=void\ moverNumEixo(int,\ int)
-comment5.text=\n\ Tenta\ mover\ em\ um\ eixo,desfaz\ o\ movimento\ caso\n\ encontre\ um\ obstaculo\n
+comment5.text=\n\ Tenta\ mover\ o\ actor,desfaz\ o\ movimento\ caso\n\ encontre\ um\ obstaculo\n
 comment6.params=andando
 comment6.target=void\ definirAnimacao(boolean)
 comment6.text=\n\ Define\ qual\ animacao\ sera\ usada\ no\ momento\n

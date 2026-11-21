@@ -14,14 +14,6 @@ public class Entidade extends Actor
     private Animacao animacaoAndando;
     // animacao atual
     private Animacao animacaoAtual;
-    // indica se a entidade esta andando
-    private boolean andando;
-    // guarda o indice da imagem atual do fazendeiro
-    private int indiceImagemAtual;
-    // indica quantos passos sao necessarios para atualizar a imagem
-    private static final int passosParaAtualizarImagem = 8;
-    // indica quantos passos se passaram desde a ultima atualizacao da imagem
-    private int passosDesdeUltimaAtualizacaoImagem;
 
     /**
      * Construtor de uma entidade, recebe o prefixo das imagens da entidade
@@ -36,8 +28,6 @@ public class Entidade extends Actor
      */
     protected Entidade(String prefixoParado, int nImagensParado,
     String prefixoAndando, int nImagensAndando, int vel) {
-        // há quantos passos a imagem foi atualizada
-        passosDesdeUltimaAtualizacaoImagem = 0;
         // carrega as animacoes
         animacaoParado = new Animacao(prefixoParado, nImagensParado);
         animacaoAndando = new Animacao(prefixoAndando, nImagensAndando);
