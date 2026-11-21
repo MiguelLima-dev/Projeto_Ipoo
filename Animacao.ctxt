@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Animacao
+comment0.text=\n\ Controla\ a\ sequencia\ de\ imagens\ de\ uma\ animacao\n
+comment1.params=prefixo\ quantidade
+comment1.target=Animacao(java.lang.String,\ int)
+comment1.text=\n\ Construtor\ da\ classe\ animacao\n\ @param\ prefixo\ prefixo\ dos\ arquivos\n\ @param\ quantidade\ numero\ de\ arquivos\ de\ imagem\n
+comment2.params=prefixo\ numeroDeImagens
+comment2.target=greenfoot.GreenfootImage[]\ carregarImagens(java.lang.String,\ int)
+comment2.text=\n\ Carrega\ um\ conjunto\ de\ imagens\ no\ formato\:\ prefixo\ (1).png,\ prefixo\ (2).png,\ ...\n\ @param\ prefixo\ prefixo\ da\ imagem\ a\ ser\ carregada\n\ @param\ numeroDeImagens\ numero\ de\ imagens\ a\ serem\ carregadas\n\ @return\ As\ imagens\ com\ o\ prefixo\ encontradas\n
+comment3.params=
+comment3.target=greenfoot.GreenfootImage\ avancar()
+comment3.text=\n\ Avanca\ um\ passo(frame).\ Retorna\ uma\ imagem\ ao\ chegar\ a\ hora\ de\ trocar,\ ou\n\ null,\ caso\ nao\ seja\ necessario\ trocar\n
+comment4.params=
+comment4.target=greenfoot.GreenfootImage\ reiniciar()
+comment4.text=\n\ Volta\ para\ a\ primeira\ imagem\ e\ retorna\ ela\n
+numComments=5

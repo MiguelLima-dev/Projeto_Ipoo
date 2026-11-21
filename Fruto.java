@@ -8,7 +8,7 @@ import greenfoot.GreenfootSound;
 public class Fruto extends Actor
 {
     // guarda as imagens do fruto
-    private static final GreenfootImage[] imagensFruto = Entidade.carregarImagens("fruto", 7);
+    private static final GreenfootImage[] imagensFruto = Animacao.carregarImagens("fruto", 7);
     // quantos frames dura cada imagem
     private static final int[] duracaoImagem = {10, 25, 20, 20, 15, 10, 6};
     // indice da imagem atual
