@@ -7,32 +7,29 @@ import greenfoot.GreenfootSound;
  */
 public class Fruto extends Actor
 {
-    // guarda as imagens do fruto
-    private static final GreenfootImage[] imagensFruto = Animacao.carregarImagens("fruto", 7);
     // quantos frames dura cada imagem
-    private static final int[] duracaoImagem = {10, 25, 20, 20, 15, 10, 6};
-    // indice da imagem atual
-    private int indiceImagemAtual;
-    // quantos frames se passaram desde que o fruto foi coletado ou criado    
-    private int frames;
-    // se o fruto esta disponivel
+    private static final int[] DURACAO_IMAGENS = {10, 25, 20, 20, 15, 10, 6};
+    // para ajustar o volume do audio
+    private static final GreenfootSound SOM_BROTAR = new GreenfootSound("fruta_brotando.wav");
+    // animacao do fruto brotando
+    private Animacao animacaoBrotar;
+    
+    // se a planta esta coletavel
     private boolean coletavel;
     // se a planta esta brotando
     private boolean brotando;
-    // para ajustar o volume do audio
-    private static final GreenfootSound som = new GreenfootSound("fruta_brotando.wav");
+
     
     public Fruto() {
-        // a imagem comeca no primeiro indice
-        indiceImagemAtual = 0;
-        // define a imagem
-        setImage(imagensFruto[indiceImagemAtual]);
+        // inicia a animacao e a imagem do actor
+        animacaoBrotar = new Animacao("fruto", 7, DURACAO_IMAGENS);
+        setImage(animacaoBrotar.reiniciar());
         // a planta inicia sem fruto
         coletavel = false;
         // inicia a planta sem brotar
         brotando = false;
         // altera o volume do som
-        som.setVolume(70);
+        SOM_BROTAR.setVolume(70);
     }
     
     /**
@@ -57,19 +54,14 @@ public class Fruto extends Actor
      * Executa a animacao de crescimento do fruto
      */
     private void animarBrotar() {
-        frames++;
-        if (frames >= duracaoImagem[indiceImagemAtual]) {
-            frames = 0;
-            indiceImagemAtual++;
-            setImage(imagensFruto[indiceImagemAtual]);
+        GreenfootImage novaImagem = animacaoBrotar.avancar();
+        if (novaImagem != null) {
+            setImage(novaImagem);
             
-            if (indiceImagemAtual == imagensFruto.length - 1) {
-                // o fruto agora eh coletavel
+            if (animacaoBrotar.estaNaUltimaImagem()) {
                 coletavel = true;
-                // o fruto nao esta mais crescendo
                 brotando = false;
-                // toca o som
-                som.play();
+                SOM_BROTAR.play();
             }
         }
     }
@@ -81,8 +73,7 @@ public class Fruto extends Actor
     public boolean coletar() {
         if (coletavel) {
             coletavel = false;
-            indiceImagemAtual = 0;
-            setImage(imagensFruto[indiceImagemAtual]);
+            setImage(animacaoBrotar.reiniciar());
             return true;
         }
         // o fruto ainda nao eh coletavel

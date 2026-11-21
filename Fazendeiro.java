@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Entidade here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * A classe fazendeiro representa o jogador
  */
 public class Fazendeiro extends Entidade
 {

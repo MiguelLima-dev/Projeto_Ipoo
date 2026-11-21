@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Fazendeiro
-comment0.text=\n\ Write\ a\ description\ of\ class\ Entidade\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ A\ classe\ fazendeiro\ representa\ o\ jogador\n
 comment1.params=
 comment1.target=Fazendeiro()
 comment2.params=
