@@ -22,8 +22,7 @@ public class TelaInstrucoes extends Tela
     @Override
     protected void tratarTecla(String tecla) {
         if ("space".equals(tecla)) {
-            pararMusica();
-            Greenfoot.setWorld(new FaseUm());
+           trocarMundo(new FaseUm());
         }
     }
 }

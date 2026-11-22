@@ -24,11 +24,10 @@ public class TelaInicial extends Tela
     @Override
     protected void tratarTecla(String tecla) {
         if ("enter".equals(tecla)) {
-            Greenfoot.setWorld(new TelaInstrucoes());
+            trocarMundo(new TelaInstrucoes());
         }
         else if ("space".equals(tecla)) {
-            pararMusica();
-            Greenfoot.setWorld(new FaseUm());
+            trocarMundo(new FaseUm());
         }
     }
 }

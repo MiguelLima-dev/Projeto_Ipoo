@@ -6,7 +6,7 @@ import java.util.List;
  * frutos coletaveis que renascem.
  * A saida eh aberta depois de um certo tempo
  */
-public class FaseUm extends World
+public class FaseUm extends Mundo
 {   
     // minutos até o jogo acabar, até o relogio bater 00:00
     private static final int totalMinutos = 60;
@@ -32,9 +32,7 @@ public class FaseUm extends World
      */
     public FaseUm()
     {
-        super(1200, 700, 1);
-        setBackground(new GreenfootImage("faseUm.png"));
-
+        super("faseUm.png", null);
         // a hora inicia em 23:00
         relogio = new Relogio(23, 00);
         fimDeJogo = false;
