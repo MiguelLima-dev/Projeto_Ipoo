@@ -15,7 +15,7 @@ public class LoboMau extends Inimigo
     public LoboMau() 
     {
         // idle: 11 imagens| walk: 10 imagens| velocidade: 1
-        super("Lobisomem_idle", 11, "Lobisomem_walk", 10, 1);
+        super("Lobisomem_idle", 11, "Lobisomem_walk", 10, 1, "lobo_mau_uivando.wav");
         
         // o lobo mau comeca andando para direita
         andandoParaDireita = true;

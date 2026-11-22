@@ -5,13 +5,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Inimigo extends Entidade
 {
-    
+    // arquivo do som que o inimigo faz ao pegar o jogador
+    private String arquivoSom;
+
     /**
      * Cria um inimigo, partindo do construtor de entidade
      */
     protected Inimigo(String prefixoParado, int nImagensParado,
-    String prefixoAndando, int nImagensAndando, int vel) {
+    String prefixoAndando, int nImagensAndando, int vel, String arquivoSom) {
         super(prefixoParado, nImagensParado, prefixoAndando, nImagensAndando, vel);
+        arquivoSom = arquivoSom;
     }
 
     /**
@@ -20,6 +23,7 @@ public class Inimigo extends Entidade
     public void act()
     {
         super.act();
+        tocarSomCaptura();
     }
 
     /**
@@ -47,5 +51,16 @@ public class Inimigo extends Entidade
         }
 
         mover(dx, dy);
+    }
+
+    /**
+     * Toca o som do inimigo ao pegar o jogador
+     */
+    private void tocarSomCaptura() {
+        if (isTouching(Fazendeiro.class)) {
+            if (arquivoSom != null) {
+                Greenfoot.playSound(arquivoSom);
+            }
+        }
     }
 }

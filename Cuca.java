@@ -19,7 +19,7 @@ public class Cuca extends Inimigo
     public Cuca(Fazendeiro jogadorAlvo)
     {
         // idle: 11 imagens| walk: 10 imagens| velocidade: 1
-        super("Cuca_idle", 11, "Cuca_walk", 10, 1);
+        super("Cuca_idle", 11, "Cuca_walk", 10, 1, "cuca_rindo.wav");
         alvo = jogadorAlvo;
         seMoveNesseAct = true;
     }

@@ -14,7 +14,7 @@ public class BichoPapao extends Inimigo
     public BichoPapao() {
 
         // idle: 11 imagens| walk: 10 imagens| velocidade: 1
-        super("BichoPapao_idle", 11, "BichoPapao_walk", 10, 1);
+        super("BichoPapao_idle", 11, "BichoPapao_walk", 10, 1, null);
     }
 
     /**
