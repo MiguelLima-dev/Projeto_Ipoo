@@ -25,6 +25,22 @@ public class Mundo extends World {
     }
     
     /**
+     * Retorna a largura do mundo
+     * @return a largura do mundo;
+     */
+    protected int obterLargura() {
+        return LARGURA;
+    }
+    
+    /**
+     * Retorna a altura do mundo
+     * @return a altura do mundo
+     */
+    protected int obterAltura() {
+        return ALTURA;
+    }
+    
+    /**
      * Garante que a musica correta esta tocando com quando o jogador inicia
      */
     public void started() {
