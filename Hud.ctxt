@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Hud
+comment0.text=\n\ Classe\ do\ Hud\ do\ jogo\n
+comment1.params=pontuacaoInicial\ horarioInicial
+comment1.target=Hud(int,\ java.lang.String)
+comment1.text=\n\ Cria\ um\ hud\ com\ pontuacao\ e\ horario\n\ @param\ pontuacaoInicial\ pontuacao\ inicial\ do\ placar\n\ @param\ horarioInicial\ horario\ inicial\ do\ hud\n
+comment2.params=mundo
+comment2.target=void\ adicionarAoMundo(greenfoot.World)
+comment2.text=\n\ Adiciona\ o\ Hud\ ao\ mundo\n\ @param\ mundo\ mundo\ ao\ qual\ o\ hud\ sera\ adicionado\n
+comment3.params=pontuacao\ novoHorario
+comment3.target=void\ atualizar(int,\ java.lang.String)
+comment3.text=\n\ Atualiza\ o\ hud\n\ @param\ pontuacao\ a\ nova\ pontuacao\n\ @param\ novoHorario\ o\ novo\ horario\n
+numComments=4
