@@ -25,14 +25,14 @@ public class Mundo extends World {
     }
     
     /**
-     * Garante que a musica correta esta tocando com quando o jogador inicia
+     * Garante que a musica correta esta tocando quando o jogador inicia
      */
     public void started() {
         garantirMusicaTocando();
     }
 
     /**
-     * Pause a musica quando o jogador pausa o jogo
+     * Pausa a musica quando o jogador pausa o jogo
      */
     public void stopped() {
         if (musicaAtual != null) {

@@ -22,9 +22,9 @@ public class LoboMau extends Inimigo
     }
 
     /**
-     * Act - do whatever the LoboMau wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Faz o lobo agir, se movimentando de um lado para o outro no eixo y
      */
+    @Override
     public void act()
     {
         super.act();

@@ -47,6 +47,7 @@ public class Fase extends Mundo {
     /**
      * Executa as acoes do mundo a cada frame
      */
+    @Override
     public void act() {
         // tenta fazer um fruto brotar
         tentarCrescerFruto();

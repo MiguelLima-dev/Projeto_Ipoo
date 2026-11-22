@@ -60,8 +60,8 @@ public class Entidade extends Actor
     /**
      * Move a entidade (dx, dy), parando ao colidir com obstaculos.
      * Cada eixo eh testado separadamente, entao a entidade desliza
-     * pela parade ao invez de grudar nela. Tambem atuliaza o estado
-     * "andando", trocando entre as animacoes de parede e andando.
+     * pela parede ao invez de grudar nela. Tambem atualiza o estado
+     * "andando", trocando entre as animacoes de parado e andando.
      * Retorna se a entidade se moveu
      * @param dx O quanto a entidade se move no eixo x
      * @param dy O quanto a entidade se move no eixo y

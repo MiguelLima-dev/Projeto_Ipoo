@@ -15,7 +15,8 @@ public class Tela extends Mundo
     }
     
     /**
-     * Guarda a ultima tecla pressionada a cada act
+     * Guarda a ultima tecla pressionada a cada act e faz o que eh
+     * preciso em cada subclasse
      */
     public void act() {
         String tecla = Greenfoot.getKey();
@@ -26,7 +27,7 @@ public class Tela extends Mundo
     }
     
     /**
-     * Eh feita para para ser sobreescrita pelas subclasses,
+     * Eh feita para ser sobreescrita pelas subclasses,
      * deve tratar o uso de botoes para alterar a tela
      */
     protected void tratarTecla(String tecla) {

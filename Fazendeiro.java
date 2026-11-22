@@ -9,7 +9,7 @@ public class Fazendeiro extends Entidade
     private int pontuacao;
     
     public Fazendeiro() {
-        // idle: 11 imagens| walk: 9 imagens| velocidade 2
+        // idle: 11 imagens| walk: 10 imagens| velocidade 2
         super("Fazendeiro_idle", 11, "Fazendeiro_walk", 10, 2);
         // inicia com 0 pontos
         pontuacao = 0;

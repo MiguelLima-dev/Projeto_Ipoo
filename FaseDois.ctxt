@@ -1,9 +1,10 @@
 #BlueJ class context
 comment0.target=FaseDois
-comment0.text=\n\ Write\ a\ description\ of\ class\ FaseDois\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=horaInicio\ horaFim
+comment0.text=\n\ Classe\ da\ segunda\ fase\ do\ jogo\n
+comment1.params=horaInicio\ minutoInicio
 comment1.target=FaseDois(int,\ int)
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ FaseDois.\n\ \n
+comment1.text=\n\ Construtor\ da\ fase\ dois\ do\ jogo\n\ @param\ horaInicio\ hora\ inicial\ do\ relogio\n\ @param\ minutoInicio\ minutor\ inicial\ do\ relogio\n
 comment2.params=
 comment2.target=Mundo\ criarProximoMundo()
+comment2.text=\n\ O\ proximo\ mundo\ agora\ eh\ a\ terceira\ fase\n
 numComments=3

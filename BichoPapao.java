@@ -18,9 +18,9 @@ public class BichoPapao extends Inimigo
     }
 
     /**
-     * Act - do whatever the BichoPapao wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Faz o bichoPapao agir, tentando pegar os frutos
      */
+    @Override
     public void act()
     {
         super.act();

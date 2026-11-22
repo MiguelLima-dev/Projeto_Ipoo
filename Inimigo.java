@@ -34,7 +34,7 @@ public class Inimigo extends Entidade
         int dx = 0; // posicao horizontal
         int dy = 0; // posicao vertical
 
-        // se o fruto estiver a direita, dx recebe velocidade positiva
+        // se o alvo estiver a direita, dx recebe velocidade positiva
         // se estiver a esquerda, recebe velocidade negativa 
         if (alvo.getX() > getX()) {    
             dx = obterVel();
@@ -42,7 +42,7 @@ public class Inimigo extends Entidade
             dx = -obterVel();
         }
 
-        // se o fruto estiver em cima, dy recebe velocidade positiva
+        // se o alvo estiver em cima, dy recebe velocidade positiva
         // se estiver em baixo, velocidade negativa
         if (alvo.getY() > getY()) {
             dy = obterVel();

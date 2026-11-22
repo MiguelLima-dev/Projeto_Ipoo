@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.target=TelaFinal
-comment0.text=\n\ Write\ a\ description\ of\ class\ TelaFinal\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Classe\ da\ tela\ final\ do\ jogo,\ onde\ eh\ exibido\ se\ o\ jogador\ venceu\ ou\ nao.\n\ Tambem\ sao\ exibidas\ algumas\ estatisticas,\ como\ pontuacao\ e\ tempo\ ao\ longo\ do\ jogo\n
 comment1.params=venceu
 comment1.target=TelaFinal(boolean)
+comment1.text=\n\ Construtor\ da\ tela\ final,\ recebe\ se\ o\ jogador\ venceu\ ou\ nao\n\ @param\ venceu\ se\ o\ jogador\ venceu\ ou\ nao\ o\ jogo\n\ \n
 numComments=2

@@ -2,7 +2,7 @@ import greenfoot.*;
 import greenfoot.Actor;
 
 /**
- * O inimigo Cuca segue o inimigo no mapa.
+ * O inimigo Cuca segue o jogador no mapa.
  */
 public class Cuca extends Inimigo
 {   
@@ -25,9 +25,9 @@ public class Cuca extends Inimigo
     }
 
     /**
-     * Act - do whatever the Cuca wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Faz a cuca agir, se movimentando em direcao ao jogador
      */
+    @Override
     public void act()
     {
         super.act();

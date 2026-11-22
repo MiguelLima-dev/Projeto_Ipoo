@@ -67,6 +67,7 @@ public class Animacao {
     /**
      * Avanca um passo(frame). Retorna uma imagem ao chegar a hora de trocar, ou
      * null, caso nao seja necessario trocar
+     * @return a nova imagem, null caso nao seja nova
      */
     public GreenfootImage avancar() {
         passos++;
@@ -80,6 +81,7 @@ public class Animacao {
 
     /**
      * Volta para a primeira imagem e retorna ela
+     * @return a primeira imagem do vetor
      */
     public GreenfootImage reiniciar() {
         indiceAtual = 0;
