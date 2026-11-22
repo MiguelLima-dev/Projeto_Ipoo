@@ -14,7 +14,7 @@ public class Inimigo extends Entidade
     protected Inimigo(String prefixoParado, int nImagensParado,
     String prefixoAndando, int nImagensAndando, int vel, String arquivoSom) {
         super(prefixoParado, nImagensParado, prefixoAndando, nImagensAndando, vel);
-        arquivoSom = arquivoSom;
+        this.arquivoSom = arquivoSom;
     }
 
     /**
