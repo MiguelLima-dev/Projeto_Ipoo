@@ -1,13 +1,16 @@
 #BlueJ class context
 comment0.target=Texto
-comment0.text=\n\ Esse\ ator\ exibe\ um\ texto\ em\ branco\ na\ tela\n
-comment1.params=texto
-comment1.target=Texto(java.lang.String)
-comment1.text=\n\ Exibe\ um\ texto.\n\ @param\ texto\ o\ texto\ a\ ser\ exibido\n
+comment0.text=\n\ Esse\ ator\ exibe\ um\ texto\ em\ branco\ na\ tela.\n\ O\ tamanho\ padrao\ da\ fonte\ \ 50\n
+comment1.params=texto\ tamanho
+comment1.target=Texto(java.lang.String,\ int)
+comment1.text=\n\ Exibe\ um\ texto.\n\ @param\ texto\ o\ texto\ a\ ser\ exibido\n\ @param\ tamanho\ o\ tamanho\ da\ fonte\ do\ texto\n
 comment2.params=texto
-comment2.target=void\ atualizarTexto(java.lang.String)
-comment2.text=\n\ Exibe\ um\ novo\ texto,\ nao\ troca\ caso\ seja\ o\ mesmo\n\ @param\ o\ novo\ texto\ a\ ser\ exibido\n
+comment2.target=Texto(java.lang.String)
+comment2.text=\n\ Exibe\ um\ texto\ no\ tamanho\ de\ fonte\ padrao\n\ @param\ texto\ o\ texto\ a\ ser\ exibido\n
 comment3.params=texto
-comment3.target=void\ escreverTexto(java.lang.String)
-comment3.text=\n\ Escreve\ o\ texto\ no\ actor\n
-numComments=4
+comment3.target=void\ atualizarTexto(java.lang.String)
+comment3.text=\n\ Exibe\ um\ novo\ texto,\ nao\ troca\ caso\ seja\ o\ mesmo\n\ @param\ o\ novo\ texto\ a\ ser\ exibido\n
+comment4.params=texto
+comment4.target=void\ escreverTexto(java.lang.String)
+comment4.text=\n\ Escrever\ o\ texto,\ com\ o\ tamanho\ dado,\ no\ actor\n\ @param\ texto\ o\ texto\ a\ ser\ escrito\n\ @param\ tamanho\ o\ tamanho\ do\ texto\ a\ ser\ escrito\n
+numComments=5
