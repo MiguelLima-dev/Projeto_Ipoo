@@ -7,6 +7,8 @@ public class Inimigo extends Entidade
 {
     // arquivo do som que o inimigo faz ao pegar o jogador
     private String arquivoSom;
+    // guarda que verifica que o som ja foi tocado
+    private boolean tocouSom;
 
     /**
      * Cria um inimigo, partindo do construtor de entidade
@@ -15,6 +17,7 @@ public class Inimigo extends Entidade
     String prefixoAndando, int nImagensAndando, int vel, String arquivoSom) {
         super(prefixoParado, nImagensParado, prefixoAndando, nImagensAndando, vel);
         this.arquivoSom = arquivoSom;
+        tocouSom = false;
     }
 
     /**
@@ -58,8 +61,9 @@ public class Inimigo extends Entidade
      */
     private void tocarSomCaptura() {
         if (isTouching(Fazendeiro.class)) {
-            if (arquivoSom != null) {
+            if (arquivoSom != null && !tocouSom) {
                 Greenfoot.playSound(arquivoSom);
+                tocouSom = true;
             }
         }
     }
