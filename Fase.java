@@ -15,7 +15,8 @@ public class Fase extends Mundo {
     // posicao do jogador
     private static final int JOGADOR_X = 284;
     private static final int JOGADOR_Y = 576;
-
+    
+    private Partida partida;
     private int minutosFase;
     private Fazendeiro jogador;
     private Relogio relogio;
@@ -32,18 +33,18 @@ public class Fase extends Mundo {
      * @param minutoInicial minuto do jogo inicial
      */
     protected Fase(String arquivoFundo, String arquivoMusica, int minutosFase, int horaInicial,
-    int minutoInicial) {
+    int minutoInicial, Fazendeiro jogador) {
         super(arquivoFundo, arquivoMusica);
         setPaintOrder(Texto.class, Inimigo.class, Fazendeiro.class, Fruto.class);
         this.minutosFase = minutosFase;
         relogio = new Relogio(horaInicial, minutoInicial);
-        jogador = new Fazendeiro();
+        this.jogador = jogador;
         addObject(jogador, JOGADOR_X, JOGADOR_Y);
         hud = new Hud(jogador.obterPontuacao(), relogio.obterHorario());
         hud.adicionarAoMundo(this);
         saidaAberta = false;
     }
-
+    
     /**
      * Executa as acoes do mundo a cada frame
      */

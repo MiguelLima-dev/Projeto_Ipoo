@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Fase
 comment0.text=\n\ Superclasse\ das\ fases\ do\ jogo\n
-comment1.params=arquivoFundo\ arquivoMusica\ minutosFase\ horaInicial\ minutoInicial
-comment1.target=Fase(java.lang.String,\ java.lang.String,\ int,\ int,\ int)
+comment1.params=arquivoFundo\ arquivoMusica\ minutosFase\ horaInicial\ minutoInicial\ jogador
+comment1.target=Fase(java.lang.String,\ java.lang.String,\ int,\ int,\ int,\ Fazendeiro)
 comment1.text=\n\ Construtor\ de\ uma\ fase\n\ @param\ arquivoFundo\ arquivo\ da\ imagem\ de\ fundo\n\ @param\ arquivoMusica\ arquivo\ da\ musica\ de\ fundo\n\ @param\ minutosFase\ quantos\ minutos\ do\ jogo\ a\ fase\ dura\n\ @param\ horaInicial\ hora\ inicial\ do\ jogo\n\ @param\ minutoInicial\ minuto\ do\ jogo\ inicial\n
 comment10.params=
 comment10.target=int\ obterHorasRelogio()

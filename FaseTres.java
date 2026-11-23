@@ -10,8 +10,8 @@ public class FaseTres extends Fase
      * @param horaInicio hora em que o relogio do jogo se inicia
      * @param minutoInico minuto em que o relogio do jogo se inicia
      */
-    public FaseTres(int horaInicio, int minutoInicio) {
-        super("faseTres.png", null, 60, horaInicio, minutoInicio);
+    public FaseTres(int horaInicio, int minutoInicio, Fazendeiro jogador) {
+        super("faseTres.png", null, 60, horaInicio, minutoInicio, jogador);
         
     }
     

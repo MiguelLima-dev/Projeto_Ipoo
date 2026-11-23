@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=FaseTres
 comment0.text=\n\ Classe\ da\ terceira\ fase\ do\ jogo,\ a\ fase\ do\ chefe\n
-comment1.params=horaInicio\ minutoInicio
-comment1.target=FaseTres(int,\ int)
+comment1.params=horaInicio\ minutoInicio\ jogador
+comment1.target=FaseTres(int,\ int,\ Fazendeiro)
 comment1.text=\n\ Construtor\ da\ fase\ tres\ do\ jogo\n\ @param\ horaInicio\ hora\ em\ que\ o\ relogio\ do\ jogo\ se\ inicia\n\ @param\ minutoInico\ minuto\ em\ que\ o\ relogio\ do\ jogo\ se\ inicia\n
 comment2.params=
 comment2.target=void\ tentarCriarSaida()

@@ -11,8 +11,8 @@ public class FaseDois extends Fase
      * @param horaInicio hora inicial do relogio
      * @param minutoInicio minutor inicial do relogio
      */
-    public FaseDois(int horaInicio, int minutoInicio) {
-        super("faseDois.png", null, 60, horaInicio, minutoInicio);
+    public FaseDois(int horaInicio, int minutoInicio, Fazendeiro jogador) {
+        super("faseDois.png", null, 60, horaInicio, minutoInicio, jogador);
         
         int[][] posicoes = {
             {901,104}, {681, 612}, {229, 155}, {146, 574}, {806, 318}, {997, 607}
@@ -26,6 +26,6 @@ public class FaseDois extends Fase
      */
     @Override
     protected Mundo criarProximoMundo() {
-        return new FaseTres(obterHorasRelogio(), obterMinutosRelogio());
+        return new FaseTres(obterHorasRelogio(), obterMinutosRelogio(), obterJogador());
     }
 }
