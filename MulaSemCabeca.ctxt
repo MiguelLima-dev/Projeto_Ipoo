@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=MulaSemCabeca
+comment0.text=\r\n\ A\ chefe\ final\ do\ jogo\ MulaSemCabeca\ persegue\ o\ jogador\ e\ quando\ \r\n\ chega\ a\ uma\ determinada\ distancia,\ realiza\ uma\ investida.\r\n
+comment1.params=
+comment1.target=MulaSemCabeca()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MulaSemCabeca\r\n
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ tratarMovimento()
+numComments=4

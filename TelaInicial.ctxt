@@ -1,9 +1,10 @@
 #BlueJ class context
 comment0.target=TelaInicial
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ TelaInicial\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Tela\ inicial\ do\ jogo,\ leva\ para\ primeira\ fase\ ou\ para\ a\r\n\ tela\ de\ instrucoes\r\n
 comment1.params=
 comment1.target=TelaInicial()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ TelaInicial.\r\n\ \r\n
+comment1.text=\r\n\ Constroi\ a\ tela\ inicial\ com\ a\ imagem\ indicada\r\n
 comment2.params=tecla
 comment2.target=void\ tratarTecla(java.lang.String)
+comment2.text=\r\n\ Trata\ as\ teclas\ de\ altera\u00E7ao\ de\ tela\r\n\ enter\ leva\ para\ tela\ de\ instrucoes\r\n\ espaco\ inicia\ a\ primeira\ fase\r\n
 numComments=3
