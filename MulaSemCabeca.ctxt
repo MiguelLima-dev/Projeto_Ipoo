@@ -1,11 +1,17 @@
 #BlueJ class context
 comment0.target=MulaSemCabeca
-comment0.text=\r\n\ A\ chefe\ final\ do\ jogo\ MulaSemCabeca\ persegue\ o\ jogador\ e\ quando\ \r\n\ chega\ a\ uma\ determinada\ distancia,\ realiza\ uma\ investida.\r\n
-comment1.params=
-comment1.target=MulaSemCabeca()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MulaSemCabeca\r\n
+comment0.text=\r\n\ A\ chefe\ final\ do\ jogo\ MulaSemCabeca\ persegue\ o\ jogador\ e\ quando\ \r\n\ chega\ a\ uma\ determinada\ distancia,\ realiza\ uma\ investida\ em\ \r\n\ linha\ reta.\r\n
+comment1.params=jogador
+comment1.target=MulaSemCabeca(Fazendeiro)
+comment1.text=\r\n\ Construtor\ de\ objetos\ da\ classe\ MulaSemCabeca\r\n\ @param\ recebe\ da\ classe\ da\ fase\ o\ Actor\ que\ representa\ o\ jogador\r\n
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ tratarMovimento()
-numComments=4
+comment4.params=
+comment4.target=void\ iniciarInvestida()
+comment4.text=\r\n\ Inicia\ o\ processo\ da\ investida,calculando\ primeiramente\ \r\n\ a\ sua\ dire\u00E7\u00E3o.\r\n
+comment5.params=
+comment5.target=void\ executaInvestida()
+comment5.text=\ \r\n\ Realiza\ a\ investida\ em\ si.\r\n
+numComments=6
