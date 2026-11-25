@@ -14,7 +14,7 @@ public class Texto extends Actor
     private String textoAtual;
 
     /**
-     * Exibe um texto.
+     * Exibe um texto no tamanho especificado.
      * @param texto o texto a ser exibido
      * @param tamanho o tamanho da fonte do texto
      */
