@@ -14,15 +14,4 @@ public class TelaInstrucoes extends Tela
     {
         super("telaInstrucoes.png");
     }
-
-    /**
-     * Trata as teclas de alteraçao de tela
-     * espaco inicia a primeira fase
-     */
-    @Override
-    protected void tratarTecla(String tecla) {
-        if ("space".equals(tecla)) {
-           trocarMundo(new FaseUm());
-        }
-    }
 }

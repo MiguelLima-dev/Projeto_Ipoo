@@ -1,9 +1,16 @@
 #BlueJ class context
 comment0.target=TelaFinal
-comment0.text=\n\ Classe\ da\ tela\ final\ do\ jogo,\ onde\ eh\ exibido\ se\ o\ jogador\ venceu\ ou\ nao.\n\ Tambem\ sao\ exibidas\ algumas\ estatisticas,\ como\ pontuacao\ e\ tempo\ ao\ longo\ do\ jogo\n
+comment0.text=\n\ Classe\ da\ tela\ final\ do\ jogo,\ onde\ eh\ exibido\ se\ o\ jogador\ venceu\ ou\ nao.\n\ Tambem\ sao\ exibidas\ as\ estatisticas\ de\ pontuacao\ e\ tempo\ ao\ longo\ do\ jogo.\n\ Tambm\ da\ a\ op\u00E7ao\ de\ reiniciar\ o\ jogo\ apertando\ espa\u00E7o\n
 comment1.params=venceu\ partida
 comment1.target=TelaFinal(boolean,\ Partida)
-comment1.text=\n\ Construtor\ da\ tela\ final,\ recebe\ se\ o\ jogador\ venceu\ ou\ nao\n\ @param\ venceu\ se\ o\ jogador\ venceu\ ou\ nao\ o\ jogo\n\ \n
+comment1.text=\n\ Construtor\ da\ tela\ final,\ recebe\ se\ o\ jogador\ venceu\ ou\ nao\ e\ a\n\ partida\ com\ as\ estatisticas\ a\ serem\ exibidas\n\ @param\ venceu\ se\ o\ jogador\ venceu\ ou\ nao\ o\ jogo\n\ @param\ partida\ a\ partida\ com\ as\ estatisticas\n
 comment2.params=
-comment2.target=void\ exibirResultados()
-numComments=3
+comment2.target=void\ adicionarInstrucao()
+comment2.text=\n\ Adiciona\ o\ texto\ com\ a\ instrucao\ de\ como\ jogar\ outra\ partida\n
+comment3.params=vitoria
+comment3.target=void\ exibirVitoriaOuDerrota(boolean)
+comment3.text=\n\ Exibe\ o\ texto\ com\ vitoria\ ou\ derrota\n\ @param\ vitoria\ se\ o\ texto\ exibido\ eh\ vitoria\ ou\ nao\n
+comment4.params=partida
+comment4.target=void\ exibirResultados(Partida)
+comment4.text=\n\ Exibe\ as\ estatisticas\ de\ pontua\u00E7ao\ e\ minutos\ de\ jogo\ ao\ longo\ da\ partida\n\ @param\ partida\ a\ partida\ a\ ser\ analisada\n
+numComments=5

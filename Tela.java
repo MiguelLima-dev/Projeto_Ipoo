@@ -31,6 +31,8 @@ public class Tela extends Mundo
      * deve tratar o uso de botoes para alterar a tela
      */
     protected void tratarTecla(String tecla) {
-
+        if ("space".equals(tecla)) {
+            trocarMundo(new FaseUm());
+        }
     }
 }

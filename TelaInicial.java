@@ -23,11 +23,9 @@ public class TelaInicial extends Tela
      */
     @Override
     protected void tratarTecla(String tecla) {
+        super.tratarTecla(tecla);
         if ("enter".equals(tecla)) {
             trocarMundo(new TelaInstrucoes());
-        }
-        else if ("space".equals(tecla)) {
-            trocarMundo(new FaseUm());
         }
     }
 }
