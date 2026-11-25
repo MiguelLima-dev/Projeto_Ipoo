@@ -12,7 +12,7 @@ public class Partida {
     private static final int CAMPOS_POR_FASE = 2;
     // guarda as pontuacoes e tempos de cada fase
     private ArrayList<int[]> dadosFases; 
-
+    
     /**
      * Construtor de um objeto partida, inicia
      * o ArrayList de dados
