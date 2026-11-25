@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=FaseDois
 comment0.text=\n\ Classe\ da\ segunda\ fase\ do\ jogo\n
-comment1.params=horaInicio\ minutoInicio\ jogador
-comment1.target=FaseDois(int,\ int,\ Fazendeiro)
+comment1.params=horaInicio\ minutoInicio\ jogador\ partida
+comment1.target=FaseDois(int,\ int,\ Fazendeiro,\ Partida)
 comment1.text=\n\ Construtor\ da\ fase\ dois\ do\ jogo\n\ @param\ horaInicio\ hora\ inicial\ do\ relogio\n\ @param\ minutoInicio\ minutor\ inicial\ do\ relogio\n
 comment2.params=
 comment2.target=Mundo\ criarProximoMundo()

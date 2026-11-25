@@ -18,6 +18,7 @@ public class Fase extends Mundo {
     
     private Partida partida;
     private int minutosFase;
+    private int pontuacaoInicialJogador;
     private Fazendeiro jogador;
     private Relogio relogio;
     private Hud hud;
@@ -33,15 +34,18 @@ public class Fase extends Mundo {
      * @param minutoInicial minuto do jogo inicial
      */
     protected Fase(String arquivoFundo, String arquivoMusica, int minutosFase, int horaInicial,
-    int minutoInicial, Fazendeiro jogador) {
+    int minutoInicial, Fazendeiro jogador, Partida partida) {
         super(arquivoFundo, arquivoMusica);
         setPaintOrder(Texto.class, Inimigo.class, Fazendeiro.class, Fruto.class);
         this.minutosFase = minutosFase;
         relogio = new Relogio(horaInicial, minutoInicial);
         this.jogador = jogador;
+        pontuacaoInicialJogador = jogador.obterPontuacao();
         addObject(jogador, JOGADOR_X, JOGADOR_Y);
         hud = new Hud(jogador.obterPontuacao(), relogio.obterHorario());
         hud.adicionarAoMundo(this);
+        this.partida = partida;
+        
         saidaAberta = false;
     }
     
@@ -82,6 +86,14 @@ public class Fase extends Mundo {
     }
 
     /**
+     * Retorna a partida que essa fase faz parte
+     * @return retorna a partida
+     */
+    protected Partida obterPartida() {
+        return partida;
+    }
+    
+    /**
      * Retorna se o jogador venceu, o caso padrao eh quando ele
      * chega na saida
      * @return true se o jogador venceu, false caso contrario
@@ -115,9 +127,11 @@ public class Fase extends Mundo {
      */
     private void tratarFim() {
         if (jogadorPerdeu()) {
+            atualizarPartida();
             trocarMundo(criarTelaFinal(false));
         }
         else if (jogadorVenceu()) {
+            atualizarPartida();
             trocarMundo(criarProximoMundo());
         }
     }
@@ -154,9 +168,16 @@ public class Fase extends Mundo {
      * @return a tela final
      */
     private TelaFinal criarTelaFinal(boolean venceu) {
-        return new TelaFinal(venceu);
+        return new TelaFinal(venceu, partida);
     }
-
+    
+    /**
+     * Guarda os dados da fase na partidas
+     */
+    private void atualizarPartida() {
+        partida.adicionarDados((jogador.obterPontuacao() - pontuacaoInicialJogador), relogio.obterMinutosPassados());
+    }
+    
     /**
      * Tenta crescer um fruto, com uma chance fixa
      */    

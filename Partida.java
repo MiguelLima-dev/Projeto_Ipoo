@@ -8,6 +8,7 @@ public class Partida {
     // guardam as posicoes de cada informacao no vetor dentro do arraylist
     private static final int POS_PONTUACAO = 0;
     private static final int POS_TEMPO = 1;
+    // o numero de informaçoes que cada fase possui
     private static final int CAMPOS_POR_FASE = 2;
     // guarda as pontuacoes e tempos de cada fase
     private ArrayList<int[]> dadosFases; 
@@ -85,6 +86,7 @@ public class Partida {
         }
         return -1;
     }
+    
     /**
      * Retorna o total de um indice do vetor
      */
