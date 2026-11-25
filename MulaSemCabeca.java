@@ -101,7 +101,8 @@ public class MulaSemCabeca extends Inimigo
         
         /* se a distancia entre a mula e o fazendeiro for menor ou
          * igual a distancia minima de ataque e o tempo de recarga 
-         * for igual a zero a mula começa a preparar o ataque 
+         * for igual a zero a mula começa a preparar o ataque, se 
+         * não ela continua perseguindo o fazendeiro
          */
         if (distancia <= distanciaAtaque && tempoRecarga == 0)
         {
@@ -150,6 +151,21 @@ public class MulaSemCabeca extends Inimigo
      */
     public void executaInvestida()
     {
-        
+        // direção da investida x velocidade determinam deslocamento
+        int dx = (int) Math.round(direcaoX * velocidadeInvestida);
+        int dy = (int) Math.round(direcaoY * velocidadeInvestida);
+
+        boolean moveu = mover(dx, dy);
+
+        tempoInvestida--;
+
+        // se o tempo acabar ou a mula não conseguir se mover, a investida termina
+        if (tempoInvestida <= 0 || !moveu)
+        {
+            // encerra a investida
+            realizandoInvestida = false;
+            // reinicia o tempo para o próximo ataque
+            tempoRecarga = duracaoRecarga;
+        }
     }
 }
