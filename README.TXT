@@ -48,28 +48,28 @@ Nomes das classes que atendem ao requisito J5.1 (A tela inicial feita na primeir
 R.: TelaInicial e TelaInstrucoes
 
 Nome da classe que atende ao requisito J5.2 (Deve existir um mundo que é a segunda fase do jogo).
-R.: 
+R.: FaseDois
 
 Nome da classe que atende ao requisito J5.3 (Deve existir um mundo que é a terceira fase do jogo e que tenha um ator que é o inimigo final a ser derrotado (chefão)).
-R.: 
+R.: FaseTres
 
 Nome(s) do(s) arquivo(s) utilizado(s) que atende(m) ao requisito J5.4 (Deve existir pelo menos mais um tipo de ator (além dos dois da primeira entrega) que representam inimigos que precisem ser atacados ou evitados (sem contar o chefão)).
-R.: 
+R.: BichoPapao, Cuca e LoboMau
 
 Nomes das classes que atendem ao requisito J5.5 (Deve existir pelo menos mais dois tipos de atores que representam itens que o jogador poderá coletar no jogo (além do item da primeira entrega)).
 R.: 
 
 Nome da classe que atende ao requisito J5.6 (Deve existir pelo menos mais um tipo de ator que representa um obstáculo para o jogador (além do obstáculo da primeira entrega). Poderia ser, por exemplo, ser uma parede, uma pedra, uma armadilha, etc).
-R.: 
+R.: Espinhos
 
 Nomes dos arquivos utilizados que atendem ao requisito J5.7 (O jogo deve usar pelo menos mais dois arquivos de áudio, além dos usados na primeira entrega).
-R.: 
+R.: seashore.mp3, laugh.ogg, bird.mp3
 
 Indicar sim ou não, se o jogo atende ao requisito J5.8 (Deve existir um mundo que aparece ao final do jogo e que mostre se o jogador venceu ou perdeu (vitória ou game over). Nele devem ser exibidos os pontos obtidos pelo jogador em cada fase, e no total e o que tempo durou a partida). 
-R.: 
+R.: Sim
 
 Indicar sim ou não, se o jogo atende ao requisito J5.9 (Deve ser possível reiniciar o jogo sem que o usuário tenha que pressionar o botão “Executar” (ou “Run”) do Greenfoot).
-R.: 
+R.: Sim
  
 
 REQUISITOS DE IMPLEMENTAÇÃO
