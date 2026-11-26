@@ -1,18 +1,18 @@
 import greenfoot.*;
 
 /**
- * A chefe final do jogo MulaSemCabeca persegue o jogador e quando 
+ * A chefe final do jogo Saci persegue o jogador e quando 
  * chega a uma determinada distancia, realiza uma investida em 
  * linha reta.
  */
-public class MulaSemCabeca extends Inimigo
+public class Saci extends Inimigo
 {
     // fazendeiro que sera perseguido
     private Fazendeiro alvo;
     
-    // indica se a mula esta esperando para começar a atacar
+    // indica se o saci esta esperando para começar a atacar
     private boolean preparandoInvestida;
-    // indica se ela esta realizando a investida  
+    // indica se ele esta realizando a investida  
     private boolean realizandoInvestida;
     
     // tempo que falta para começar a investida
@@ -26,25 +26,25 @@ public class MulaSemCabeca extends Inimigo
     private double direcaoX;
     private double direcaoY;
     
-    // distancia que a mula começa a preparar o ataque
-    private static final int distanciaAtaque = 250;
-    // tempo que ela espera antes de atacar
-    private static final int duracaoPreparacao = 35;
+    // distancia que o saci começa a preparar o ataque
+    private static final int DISTANCIA_ATAQUE = 250;
+    // tempo que ele espera antes de atacar
+    private static final int DURACAO_PREPARACAO = 35;
     // duração maxima da investida
-    private static final int duracaoInvestida = 25;
-    // tempo que a mula espera até atacar novamente 
-    private static final int duracaoRecarga = 100;
+    private static final int DURACAO_INVESTIDA = 25;
+    // tempo que o saci espera até atacar novamente 
+    private static final int DURACAO_RECARGA = 100;
     // velocidade da investida 
-    private static final int velocidadeInvestida = 7;
+    private static final int VELOCIDADE_INVESTIDA = 7;
     
     /**
-     * Construtor de objetos da classe MulaSemCabeca
+     * Construtor de objetos da classe Saci
      * @param recebe da classe da fase o Actor que representa o jogador
      */
-    public MulaSemCabeca(Fazendeiro jogador)
+    public Saci(Fazendeiro jogador)
     {
         // idle: 11 imagens| walk: 10 imagens| velocidade: 1
-        super("MulaSemCabeca_idle", 11, "MulaSemCabeca_walk", 10, 1);
+        super("Saci_idle", 11, "Saci_walk", 10, 1);
         
         // define o jogador como alvo 
         alvo = jogador; 
@@ -72,7 +72,7 @@ public class MulaSemCabeca extends Inimigo
             return; 
         }
         
-        // se a mula estiver preparando para atacar, ela não deve seguir o jogador 
+        // se o saci estiver preparando para atacar, ele não deve seguir o jogador 
         if (preparandoInvestida)
         {
             mover(0, 0);
@@ -99,16 +99,16 @@ public class MulaSemCabeca extends Inimigo
         // teorema de pitagoras
         double distancia = Math.sqrt(dx*dx + dy*dy);
         
-        /* se a distancia entre a mula e o fazendeiro for menor ou
+        /* se a distancia entre o saci e o fazendeiro for menor ou
          * igual a distancia minima de ataque e o tempo de recarga 
-         * for igual a zero a mula começa a preparar o ataque, se 
-         * não ela continua perseguindo o fazendeiro
+         * for igual a zero, o saci começa a preparar o ataque, se 
+         * não, ele continua perseguindo o fazendeiro.
          */
-        if (distancia <= distanciaAtaque && tempoRecarga == 0)
+        if (distancia <= DISTANCIA_ATAQUE && tempoRecarga == 0)
         {
             preparandoInvestida = true;
             // tempo de preparacao reinicia
-            tempoPreparacao = duracaoPreparacao;
+            tempoPreparacao = DURACAO_PREPARACAO;
             mover(0, 0);
         }
         else 
@@ -123,12 +123,12 @@ public class MulaSemCabeca extends Inimigo
      */
     public void iniciarInvestida()
     {
-        // calculo distancia entre mula e fazendeiro 
+        // calculo distancia entre saci e fazendeiro 
         double dx = alvo.getX() - getX();
         double dy = alvo.getY() - getY();
         double distancia = Math.sqrt(dx * dx + dy * dy);
         
-        // verificamos se a mula e o fazendeiro não ocupam a mesma posição
+        // verificamos se o saci e o fazendeiro não ocupam a mesma posição
         if (distancia > 0)
         {
             // normalização do vetor
@@ -143,7 +143,7 @@ public class MulaSemCabeca extends Inimigo
         
         preparandoInvestida = false;
         realizandoInvestida = true;
-        tempoInvestida = duracaoInvestida;
+        tempoInvestida = DURACAO_INVESTIDA;
     }
     
     /** 
@@ -152,20 +152,28 @@ public class MulaSemCabeca extends Inimigo
     public void executaInvestida()
     {
         // direção da investida x velocidade determinam deslocamento
-        int dx = (int) Math.round(direcaoX * velocidadeInvestida);
-        int dy = (int) Math.round(direcaoY * velocidadeInvestida);
+        int dx = (int) Math.round(direcaoX * VELOCIDADE_INVESTIDA);
+        int dy = (int) Math.round(direcaoY * VELOCIDADE_INVESTIDA);
 
         boolean moveu = mover(dx, dy);
 
         tempoInvestida--;
 
-        // se o tempo acabar ou a mula não conseguir se mover, a investida termina
+        // se o tempo acabar ou o saci não conseguir se mover, a investida termina
         if (tempoInvestida <= 0 || !moveu)
         {
             // encerra a investida
             realizandoInvestida = false;
             // reinicia o tempo para o próximo ataque
-            tempoRecarga = duracaoRecarga;
+            tempoRecarga = DURACAO_RECARGA;
         }
+    }
+    
+    /**
+     * Aumenta o tempo que o saci fica parado até realizar a investida.
+     */
+    public void aumentarPreparacaoDaInvestida()
+    {
+        tempoPreparacao += 20;
     }
 }
