@@ -43,7 +43,7 @@ public class BichoPapao extends Inimigo
         if (tentarPegarFruto())
         {
             frutoAlvo = null;
-            Greenfoot.playSound("bicho_papao_comendo_fruto.wav");
+            tocarSom();
         }
     }
     
