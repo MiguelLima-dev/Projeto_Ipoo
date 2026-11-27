@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=FaseUm
-comment0.text=\n\ Essa\ classe\ eh\ a\ primeria\ fase\ do\ jogo,\ contem\ tres\ inimigos\ e\ alguns\n\ frutos\ coletaveis\ que\ renascem.\n\ A\ saida\ eh\ aberta\ depois\ de\ um\ certo\ tempo\n
+comment0.text=\n\ Essa\ classe\ eh\ a\ primeria\ fase\ do\ jogo,\ contem\ dois\ sinimigos\ e\ alguns\n\ frutos\ coletaveis\ que\ renascem.\n\ A\ saida\ eh\ aberta\ depois\ de\ um\ certo\ tempo\n
 comment1.params=
 comment1.target=FaseUm()
 comment1.text=\n\ Constroi\ a\ fase\ um\n

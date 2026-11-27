@@ -381,6 +381,6 @@ target9.x=0
 target9.y=0
 version=3.1.0
 width=1440
-world.lastInstantiated=TelaInstrucoes
+world.lastInstantiated=TelaInicial
 xPosition=1920
 yPosition=0
