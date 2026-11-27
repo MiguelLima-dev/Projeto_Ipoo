@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Cristal
+comment0.text=\n\ Cristais\ coletaveis\ pelo\ jogador,\ utilizado\ para\ causar\ dano\ ao\ inimigo.\n\ \n\ \n
+comment1.params=
+comment1.target=Cristal()
+comment2.params=
+comment2.target=void\ coletar()
+comment2.text=Tenta\ coletar\ o\ cristal\ do\ mundo,\ so\ funciona\ quando\ ele\ eh\ coletavel\n\ @return\ true\ se\ o\ cristal\ foi\ coletado,\ false\ caso\ contrario\n
+numComments=3

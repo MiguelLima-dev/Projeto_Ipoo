@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=GarrafaDeCaptura
+comment0.text=\n\ Classe\ do\ item\ coletavel\ utilizado\ para\ derrotar\ o\ chefe\n
+comment1.params=
+comment1.target=GarrafaDeCaptura()
+comment1.text=\n\ Constroi\ uma\ garrafa\ de\ captura\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Executa\ a\ animacao\ uma\ vez\ e\ para\ de\ trocar\ de\ imagem\n
+comment3.params=
+comment3.target=void\ coletar()
+comment3.text=\n\ Remove\ o\ item\ do\ mundo\n
+numComments=4

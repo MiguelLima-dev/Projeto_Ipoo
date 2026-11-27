@@ -7,12 +7,17 @@ public class Fazendeiro extends Entidade
 {
     // quantos pontos o fazendeiro tem, a contagem de frutos coletados
     private int pontuacao;
-    
+    // quantos cristais foram coletados pelo fazendeiro
+    private int cristais;
+    // quantas garrafas o fazendeiro tem
+    private int garrafas;
     public Fazendeiro() {
         // idle: 11 imagens| walk: 10 imagens| velocidade 2
         super("Fazendeiro_idle", 11, "Fazendeiro_walk", 10, 2);
-        // inicia com 0 pontos
+        // inicia com 0 pontos, 0 cristais e 1 garrafa
         pontuacao = 0;
+        cristais = 0;
+        garrafas = 1;
     }
 
     public void act() {
@@ -20,8 +25,14 @@ public class Fazendeiro extends Entidade
         tratarMovimento();
         // trata a animacao idle do fazendeiro
         super.act();
-        // trata a coleta do fruto
+        // trata a coleta de items
         tratarColetaFruto();
+        tratarColetaCristal();
+        tratarColetaGarrafa();
+        // trata o uso de items
+        String tecla = Greenfoot.getKey();
+        tratarUsoCristal(tecla);
+        tratarUsoGarrafa(tecla);
     }
     
     /**
@@ -33,6 +44,69 @@ public class Fazendeiro extends Entidade
         if (tentarPegarFruto()) {
             pontuacao += 1;
             Greenfoot.playSound("fazendeiro_coletando_fruto.wav");
+        }
+    }
+    
+    /**
+     * Retorna se o fazendeiro esta na fase tres
+     */
+    private boolean estaNaFaseFinal() {
+        return (getWorld() instanceof FaseTres);
+    }
+    
+    /**
+     * Quando o jogador, na terceira fase, aperta a tecla 'e',
+     * a proxima investida do boss acontece mais devagar. Mas
+     * isso consome um cristal
+     */
+    private void tratarUsoCristal(String tecla) {
+        if (estaNaFaseFinal()) {
+            if ("e".equals(tecla) && cristais > 0) {
+                Saci saci = getWorldOfType(FaseTres.class).obterChefe();
+                if (saci != null) {
+                    saci.aumentarPreparacaoDaInvestida();
+                    cristais--;
+                }
+            }
+        }
+    }
+    
+    /**
+     * Quando o jogador, na terceira fase, aperta a tecla 'd',
+     * ele deixa no lugar onde estava. Isso consome o numero de
+     * garrafas do jogador
+     */
+    private void tratarUsoGarrafa(String tecla) {
+        if (estaNaFaseFinal()) {
+            if ("d".equals(tecla) && garrafas > 0) {
+                getWorld().addObject(new GarrafaDeCaptura(), getX(), getY());
+                garrafas--;
+            }
+        }
+    }
+    /**
+     * Tenta pegar o fruto que o Fazendeiro esta tocando.
+     * Caso consiga coletar um cristal, incrementa a contagem de cristais do fazendeiro
+     */
+    private void tratarColetaCristal()
+    {
+        if (isTouching(Cristal.class))
+        {
+            Cristal cristal = (Cristal) getOneIntersectingObject(Cristal.class);
+            cristal.coletar();
+            cristais++;
+        }
+    }
+    
+    /**
+     * Coleta uma garrafa quando o fazendeiro a toca.
+     * Nao funciona na fase final
+     */
+    private void tratarColetaGarrafa() {
+        if (isTouching(GarrafaDeCaptura.class) && !estaNaFaseFinal()) {
+            GarrafaDeCaptura garrafa = (GarrafaDeCaptura) getOneIntersectingObject(GarrafaDeCaptura.class);
+            garrafa.coletar();
+            garrafas++;
         }
     }
     /**
@@ -49,19 +123,35 @@ public class Fazendeiro extends Entidade
     }
     
     /**
-     * Retorna a pontuacao do fazendeiro
-     * @return a pontuacao do fazendeiro
+     * Retorna a pontuacao 
+     * @return a pontuacao
      */
     public int obterPontuacao() {
         return pontuacao;
     }
     
     /**
-     * Verifica se o jogador e o inimigo se tocaram
-     * @return true se encostar no inimigo, false se não encostar
+     * Retorna a quantidade de cristais
+     * @return a quantidade de cristais
      */
-    public  boolean encostouNoInimigo(){
-        return isTouching(Inimigo.class);
+    public int obterCristais() {
+        return cristais;
+    }
+    
+    /**
+     * Retorna a quantidade de garrafas
+     * @return a quantidade de garrafas
+     */
+    public int obterGarrafas() {
+        return garrafas;
+    }
+    
+    /**
+     * Verifica se o jogador encostou em algum actor que o mate
+     * @return true se ele foi morto, false caso contrario
+     */
+    public  boolean morreu(){
+        return isTouching(Inimigo.class) || isTouching(Espinhos.class);
     }
     
     /**
