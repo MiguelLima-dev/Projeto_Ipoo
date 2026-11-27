@@ -3,25 +3,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Classe entidade, guarda as informacoes comuns a todos os personagens animados
  * do jogo.
- * @author (your name) 
- * @version (a version number or a date)
  */
 public class Entidade extends Actor
 {
     // velocidade com que essa entidade se move
     private int vel;
-    // vetor de imagens da entidade parada
-    private GreenfootImage[] imagensParado;
-    // vetor de imagens da entidade andando
-    private GreenfootImage[] imagensAndando;
-    // indica se a entidade esta andando
-    private boolean andando;
-    // guarda o indice da imagem atual do fazendeiro
-    private int indiceImagemAtual;
-    // indica quantos passos sao necessarios para atualizar a imagem
-    private static final int passosParaAtualizarImagem = 8;
-    // indica quantos passos se passaram desde a ultima atualizacao da imagem
-    private int passosDesdeUltimaAtualizacaoImagem;
+    // animacao da entidade parada
+    private Animacao animacaoParado;
+    // animacao da entidade andando
+    private Animacao animacaoAndando;
+    // animacao atual
+    private Animacao animacaoAtual;
 
     /**
      * Construtor de uma entidade, recebe o prefixo das imagens da entidade
@@ -35,18 +27,12 @@ public class Entidade extends Actor
      * @param vel Velocidade com que a entidade se move
      */
     protected Entidade(String prefixoParado, int nImagensParado,
-                    String prefixoAndando, int nImagensAndando, int vel) {
-        // há quantos passos a imagem foi atualizada
-        passosDesdeUltimaAtualizacaoImagem = 0;
-
-        // carrega as imagens da entidade parada
-        imagensParado = carregarImagens(prefixoParado, nImagensParado);
-        // carrega as imagens da entidade parada
-        imagensAndando = carregarImagens(prefixoAndando, nImagensAndando);
-        // inicia com a primeira imagem da entidade parada
-        indiceImagemAtual = 0;
-        setImage(imagensParado[indiceImagemAtual]);
-        andando = false;
+    String prefixoAndando, int nImagensAndando, int vel) {
+        // carrega as animacoes
+        animacaoParado = new Animacao(prefixoParado, nImagensParado);
+        animacaoAndando = new Animacao(prefixoAndando, nImagensAndando);
+        animacaoAtual = animacaoParado;
+        setImage(animacaoAtual.reiniciar());
 
         // a velocidade com que a entidade se move
         this.vel = vel;
@@ -57,7 +43,10 @@ public class Entidade extends Actor
      */
     public void act()
     {
-        tratarAtualizacaoImagem();
+        GreenfootImage novaImagem = animacaoAtual.avancar();
+        if (novaImagem != null) {
+            setImage(novaImagem);
+        }
     }
 
     /**
@@ -69,47 +58,10 @@ public class Entidade extends Actor
     }
 
     /**
-     * Carrega um conjunto de imagens no formato: prefixo (1).png, prefixo (2).png, ...
-     * @param prefixo prefixo da imagem a ser carregada
-     * @param numeroDeImagens numero de imagens a serem carregadas
-     * @return As imagens com o prefixo encontradas
-     */
-    public static GreenfootImage[] carregarImagens(String prefixo, int numeroDeImagens) {
-        GreenfootImage[] imagens = new GreenfootImage[numeroDeImagens];
-        for (int i = 0; i < imagens.length; i++) {
-            imagens[i] = new GreenfootImage(prefixo + " (" + (i+1) + ").png");
-        }
-        return imagens;
-    }
-
-    /**
-     * Trata a atualizacao das imagens da entidade, levando em consideracao se
-     * a entidade esta parada ou andando
-     */
-    private void tratarAtualizacaoImagem() {
-        passosDesdeUltimaAtualizacaoImagem++;
-
-        if (passosDesdeUltimaAtualizacaoImagem >= passosParaAtualizarImagem) {
-            passosDesdeUltimaAtualizacaoImagem = 0;
-
-            // decide qual vetor sera usado, com base no estado da entidade
-            GreenfootImage[] imagens;
-            if (andando) imagens = imagensAndando;
-            else imagens = imagensParado;
-
-            indiceImagemAtual++;
-            if (indiceImagemAtual >= imagens.length) {
-                indiceImagemAtual = 0;
-            }
-            setImage(imagens[indiceImagemAtual]);
-        }
-    }
-
-    /**
      * Move a entidade (dx, dy), parando ao colidir com obstaculos.
      * Cada eixo eh testado separadamente, entao a entidade desliza
-     * pela parade ao invez de grudar nela. Tambem atuliaza o estado
-     * "andando", trocando entre as animacoes de parede e andando.
+     * pela parede ao invez de grudar nela. Tambem atualiza o estado
+     * "andando", trocando entre as animacoes de parado e andando.
      * Retorna se a entidade se moveu
      * @param dx O quanto a entidade se move no eixo x
      * @param dy O quanto a entidade se move no eixo y
@@ -117,31 +69,43 @@ public class Entidade extends Actor
      */
     protected boolean mover(int dx, int dy) {
         int xInicial = getX(), yInicial =  getY();
-        boolean estavaAndando = andando;
-        andando = (dx != 0 || dy != 0);
-    
-        // deixou ou comecou a andar, reinicia a animacao
-        if (andando != estavaAndando) {
-            indiceImagemAtual = 0;
-            passosDesdeUltimaAtualizacaoImagem = 0;
-            if (andando) setImage(imagensAndando[0]);
-            else setImage(imagensParado[0]);
-        }
 
-        // tenta mover no eixo x
-        int xAnterior = getX();
-        setLocation(getX() + dx, getY());
-        if (isTouching(Obstaculo.class)) setLocation(xAnterior, getY());
-
-        // tenta mover no eixo y
-        int yAnterior = getY();
-        setLocation(getX(), getY() + dy);
-        if (isTouching(Obstaculo.class)) setLocation(getX(), yAnterior);
+        definirAnimacao(dx != 0 || dy != 0);
+        moverNumEixo(dx, 0);
+        moverNumEixo(0, dy);
         
-        // retorna se a posicao mudou
+            // retorna se a posicao mudou
         return getX() != xInicial || getY() != yInicial;
-     }
-    
+    }
+
+    /**
+     * Tenta mover o actor,desfaz o movimento caso
+     * encontre um obstaculo
+     */
+    private void moverNumEixo(int dx, int dy) {
+        int x = getX(), y = getY();
+        setLocation(x + dx, y + dy);
+        if (isTouching(Obstaculo.class)) {
+            setLocation(x, y);
+        }
+    }
+    /**
+     * Define qual animacao sera usada no momento
+     */
+    private void definirAnimacao(boolean andando) {
+        Animacao nova;
+        if (andando) {
+            nova = animacaoAndando;
+        }
+        else {
+            nova = animacaoParado;
+        }
+        if (nova != animacaoAtual) {
+            animacaoAtual = nova;
+            setImage(nova.reiniciar());
+        }
+    }
+
     /**
      * Tenta pegar o fruto que a entidade está tocando.
      * @return true se foi possível pegar o fruto, false caso contrário.
@@ -152,6 +116,20 @@ public class Entidade extends Actor
         {
             Fruto fruto = (Fruto) getOneIntersectingObject(Fruto.class);
             return fruto.coletar();
+        }
+        return false;
+    }
+    
+    /**
+     * Tenta pegar o fruto que o Fazendeiro esta tocando.
+     * @return true se foi possível pegar o cristal, false caso contrário.
+     */
+    public boolean tentarPegarCristal()
+    {
+        if (isTouching(Cristal.class))
+        {
+            Cristal cristal = (Cristal) getOneIntersectingObject(Cristal.class);
+            return cristal.coletar();
         }
         return false;
     }

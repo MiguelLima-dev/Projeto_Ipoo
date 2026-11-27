@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Saci
+comment0.text=\r\n\ A\ chefe\ final\ do\ jogo\ Saci\ persegue\ o\ jogador\ e\ quando\ \r\n\ chega\ a\ uma\ determinada\ distancia,\ realiza\ uma\ investida\ em\ \r\n\ linha\ reta.\r\n
+comment1.params=jogador
+comment1.target=Saci(Fazendeiro)
+comment1.text=\r\n\ Construtor\ de\ objetos\ da\ classe\ Saci\r\n\ @param\ recebe\ da\ classe\ da\ fase\ o\ Actor\ que\ representa\ o\ jogador\r\n
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ tratarMovimento()
+comment4.params=
+comment4.target=void\ iniciarInvestida()
+comment4.text=\r\n\ Inicia\ o\ processo\ da\ investida,calculando\ primeiramente\ \r\n\ a\ sua\ dire\u00E7\u00E3o.\r\n
+comment5.params=
+comment5.target=void\ executaInvestida()
+comment5.text=\ \r\n\ Realiza\ a\ investida\ em\ si.\r\n
+comment6.params=
+comment6.target=void\ aumentarPreparacaoDaInvestida()
+comment6.text=\r\n\ Aumenta\ o\ tempo\ que\ o\ saci\ fica\ parado\ at\u00E9\ realizar\ a\ investida.\r\n
+comment7.params=duracaoFrames
+comment7.target=void\ aplicarLentidao(int)
+numComments=8

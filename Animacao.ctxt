@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Animacao
+comment0.text=\r\n\ Controla\ a\ sequencia\ de\ imagens\ de\ uma\ animacao\r\n
+comment1.params=prefixo\ quantidade
+comment1.target=Animacao(java.lang.String,\ int)
+comment1.text=\r\n\ Construtor\ de\ uma\ animacao,\ todas\ imagens\ tem\ a\ mesma\ dura\u00E7ao\r\n\ @param\ prefixo\ prefixo\ dos\ arquivos\r\n\ @param\ quantidade\ numero\ de\ arquivos\ de\ imagem\r\n
+comment2.params=prefixo\ quantidade\ duracoes
+comment2.target=Animacao(java.lang.String,\ int,\ int[])
+comment2.text=\r\n\ Construtor\ de\ uma\ animacao,\ cada\ imagem\ tem\ uma\ certa\ dura\u00E7ao\r\n\ @param\ prefixo\ prefixo\ dos\ arquivos\r\n\ @param\ quantidade\ numero\ de\ arquivos\ de\ imagem\r\n\ @param\ duracoes\ vetor\ de\ duracoes\r\n
+comment3.params=quantidade
+comment3.target=int[]\ criarVetorComDuracoesIguais(int)
+comment3.text=\r\n\ Cria\ um\ vetor\ de\ duracoes,\ todas\ com\ o\ mesmo\ valor\r\n\ @param\ quantidade\ quantas\ posicoes\ esse\ vetor\ possui\r\n\ @return\ o\ vetor\ com\ todos\ os\ valores\ iguais\ a\ p\r\n
+comment4.params=prefixo\ numeroDeImagens
+comment4.target=greenfoot.GreenfootImage[]\ carregarImagens(java.lang.String,\ int)
+comment4.text=\r\n\ Carrega\ um\ conjunto\ de\ imagens\ no\ formato\:\ prefixo\ (1).png,\ prefixo\ (2).png,\ ...\r\n\ @param\ prefixo\ prefixo\ da\ imagem\ a\ ser\ carregada\r\n\ @param\ numeroDeImagens\ numero\ de\ imagens\ a\ serem\ carregadas\r\n\ @return\ As\ imagens\ com\ o\ prefixo\ encontradas\r\n
+comment5.params=
+comment5.target=greenfoot.GreenfootImage\ avancar()
+comment5.text=\r\n\ Avanca\ um\ passo(frame).\ Retorna\ uma\ imagem\ ao\ chegar\ a\ hora\ de\ trocar,\ ou\r\n\ null,\ caso\ nao\ seja\ necessario\ trocar\r\n\ @return\ a\ nova\ imagem,\ null\ caso\ nao\ seja\ nova\r\n
+comment6.params=
+comment6.target=greenfoot.GreenfootImage\ reiniciar()
+comment6.text=\r\n\ Volta\ para\ a\ primeira\ imagem\ e\ retorna\ ela\r\n\ @return\ a\ primeira\ imagem\ do\ vetor\r\n
+comment7.params=
+comment7.target=boolean\ estaNaUltimaImagem()
+comment7.text=\r\n\ Retorna\ se\ esta\ na\ ultima\ imagem\ da\ animacao\r\n\ @return\ true\ se\ esta\ na\ ultima\ imagem,\ false\ caso\ contrario\r\n
+numComments=8

@@ -1,10 +1,8 @@
 import greenfoot.*;
 
 /**
- * O inimigo LoboMau percorre o mapa na horizontal.
- * 
- * @author helena 
- * @version 10-11
+ * O inimigo LoboMau percorre o mapa na horizontal,
+ * se movendo de um lado para o outro.
  */
 public class LoboMau extends Inimigo
 {
@@ -17,16 +15,16 @@ public class LoboMau extends Inimigo
     public LoboMau() 
     {
         // idle: 11 imagens| walk: 10 imagens| velocidade: 1
-        super("Lobisomem_idle", 11, "Lobisomem_walk", 10, 1);
+        super("Lobisomem_idle", 11, "Lobisomem_walk", 10, 1, "lobo_mau_uivando.wav");
         
         // o lobo mau comeca andando para direita
         andandoParaDireita = true;
     }
 
     /**
-     * Act - do whatever the LoboMau wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Faz o lobo agir, se movimentando de um lado para o outro no eixo y
      */
+    @Override
     public void act()
     {
         super.act();

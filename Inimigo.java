@@ -1,28 +1,41 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Inimigo here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Superclasse dos inimigos do jogo
  */
 public class Inimigo extends Entidade
 {
+    // arquivo do som que o inimigo faz ao pegar o jogador
+    private String arquivoSom;
+    // guarda que verifica que o som ja foi tocado
+    private boolean tocouSom;
 
+    /**
+     * Cria um inimigo, partindo do construtor de entidade
+     */
     protected Inimigo(String prefixoParado, int nImagensParado,
-    String prefixoAndando, int nImagensAndando, int vel) {
+    String prefixoAndando, int nImagensAndando, int vel, String arquivoSom) {
         super(prefixoParado, nImagensParado, prefixoAndando, nImagensAndando, vel);
+        this.arquivoSom = arquivoSom;
+        tocouSom = false;
     }
 
     /**
-     * Act - do whatever the Inimigo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * age como uma entidade
      */
     public void act()
     {
         super.act();
+        tocarSomCaptura();
     }
-
+    
+    /**
+     * Toca o som do inimigo
+     */
+    protected void tocarSom() {
+        Greenfoot.playSound(arquivoSom);
+    }
+    
     /**
      * Move o inimigo em direcao a um alvo (um actor)
      * @param alvo o actor alvo
@@ -31,7 +44,7 @@ public class Inimigo extends Entidade
         int dx = 0; // posicao horizontal
         int dy = 0; // posicao vertical
 
-        // se o fruto estiver a direita, dx recebe velocidade positiva
+        // se o alvo estiver a direita, dx recebe velocidade positiva
         // se estiver a esquerda, recebe velocidade negativa 
         if (alvo.getX() > getX()) {    
             dx = obterVel();
@@ -39,7 +52,7 @@ public class Inimigo extends Entidade
             dx = -obterVel();
         }
 
-        // se o fruto estiver em cima, dy recebe velocidade positiva
+        // se o alvo estiver em cima, dy recebe velocidade positiva
         // se estiver em baixo, velocidade negativa
         if (alvo.getY() > getY()) {
             dy = obterVel();
@@ -48,5 +61,17 @@ public class Inimigo extends Entidade
         }
 
         mover(dx, dy);
+    }
+
+    /**
+     * Toca o som do inimigo ao pegar o jogador
+     */
+    private void tocarSomCaptura() {
+        if (isTouching(Fazendeiro.class)) {
+            if (arquivoSom != null && !tocouSom) {
+                tocarSom();
+                tocouSom = true;
+            }
+        }
     }
 }

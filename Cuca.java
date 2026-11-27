@@ -2,10 +2,7 @@ import greenfoot.*;
 import greenfoot.Actor;
 
 /**
- * O inimigo Cuca segue o inimigo no mapa.
- * 
- * @author helena
- * @version 10-11
+ * O inimigo Cuca segue o jogador no mapa.
  */
 public class Cuca extends Inimigo
 {   
@@ -13,6 +10,7 @@ public class Cuca extends Inimigo
     private Fazendeiro alvo;
     // usada para controlar quando a cuca se move
     private boolean seMoveNesseAct;
+    
     /**
      * Construtor de objetos para a classe Cuca. Recebe o jogado que ela
      * persegue como argumento
@@ -21,15 +19,15 @@ public class Cuca extends Inimigo
     public Cuca(Fazendeiro jogadorAlvo)
     {
         // idle: 11 imagens| walk: 10 imagens| velocidade: 1
-        super("Cuca_idle", 11, "Cuca_walk", 10, 1);
+        super("Cuca_idle", 11, "Cuca_walk", 10, 1, "cuca_rindo.wav");
         alvo = jogadorAlvo;
         seMoveNesseAct = true;
     }
 
     /**
-     * Act - do whatever the Cuca wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Faz a cuca agir, se movimentando em direcao ao jogador
      */
+    @Override
     public void act()
     {
         super.act();

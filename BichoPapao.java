@@ -2,9 +2,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * O inimigo BichoPapao pega os itens que aparecem no mapa.
- *
- * @author helena
- * @version 11-11
  */
 public class BichoPapao extends Inimigo
 {  
@@ -17,13 +14,13 @@ public class BichoPapao extends Inimigo
     public BichoPapao() {
 
         // idle: 11 imagens| walk: 10 imagens| velocidade: 1
-        super("BichoPapao_idle", 11, "BichoPapao_walk", 10, 1);
+        super("BichoPapao_idle", 11, "BichoPapao_walk", 10, 1, null);
     }
 
     /**
-     * Act - do whatever the BichoPapao wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Faz o bichoPapao agir, tentando pegar os frutos
      */
+    @Override
     public void act()
     {
         super.act();
@@ -46,6 +43,7 @@ public class BichoPapao extends Inimigo
         if (tentarPegarFruto())
         {
             frutoAlvo = null;
+            tocarSom();
         }
     }
     

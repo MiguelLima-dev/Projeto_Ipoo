@@ -3,7 +3,7 @@
  */
 public class Relogio {
     // quantos tiques valem um minuto
-    private static final int tiquesPorMinuto = 60;
+    private static final int TIQUES_POR_MINUTO = 60;
     // hora do relogio
     private int horas;
     // minuto do relogio
@@ -33,7 +33,7 @@ public class Relogio {
         tiquesRelogio++;
 
         //a cada 60 tiques avanca 1 minuto
-        if (tiquesRelogio >= tiquesPorMinuto) {
+        if (tiquesRelogio >= TIQUES_POR_MINUTO) {
             minutos++;
             minutosPassados++;
             tiquesRelogio = 0;
@@ -56,8 +56,25 @@ public class Relogio {
 
     /**
      * Retorna quantos minutos se passaram
+     * @return quantos minutos se passaram
      */
     public int obterMinutosPassados() {
         return minutosPassados;
+    }
+    
+    /**
+     * Retorna a hora do relogio
+     * @return a hora do relogio
+     */
+    public int obterHoras() {
+        return horas;
+    }
+    
+    /**
+     * Retorna os minutos do relogio
+     * @return os minutos do relogio
+     */
+    public int obterMinutos() {
+        return minutos;
     }
 }

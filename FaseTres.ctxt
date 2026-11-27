@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=FaseTres
+comment0.text=\r\n\ Classe\ da\ terceira\ fase\ do\ jogo,\ a\ fase\ do\ chefe\r\n
+comment1.params=horaInicio\ minutoInicio\ jogador\ partida
+comment1.target=FaseTres(int,\ int,\ Fazendeiro,\ Partida)
+comment1.text=\r\n\ Construtor\ da\ fase\ tres\ do\ jogo\r\n\ @param\ horaInicio\ hora\ em\ que\ o\ relogio\ do\ jogo\ se\ inicia\r\n\ @param\ minutoInico\ minuto\ em\ que\ o\ relogio\ do\ jogo\ se\ inicia\r\n
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ adicionarCristais()
+comment4.params=
+comment4.target=void\ adicionarPedras()
+comment5.params=
+comment5.target=void\ adicionarChefe()
+comment6.params=
+comment6.target=void\ tentarCriarSaida()
+comment6.text=\r\n\ Na\ terceira\ fase,\ nao\ ha\ saida,\ entao\ \r\n\ o\ metodo\ que\ cria\ a\ saida\ eh\ retirado\r\n
+numComments=7

@@ -1,18 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Entidade here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * A classe fazendeiro representa o jogador
  */
 public class Fazendeiro extends Entidade
 {
     // quantos pontos o fazendeiro tem, a contagem de frutos coletados
     private int pontuacao;
+    //quantidade de cristais coletados pelo faazendeiro
+    private int cristais;
     
     public Fazendeiro() {
-        // idle: 11 imagens| walk: 9 imagens| velocidade 2
+        // idle: 11 imagens| walk: 10 imagens| velocidade 2
         super("Fazendeiro_idle", 11, "Fazendeiro_walk", 10, 2);
         // inicia com 0 pontos
         pontuacao = 0;
@@ -23,13 +22,33 @@ public class Fazendeiro extends Entidade
         tratarMovimento();
         // trata a animacao idle do fazendeiro
         super.act();
-        // tenta pegar o fruto e adiciona na pontuação se for possível
-        if(tentarPegarFruto())
-        {
+        // trata a coleta do fruto
+        tratarColetaFruto();
+        // trata a coleta dos cristais
+        tratarColetaCristal();
+        tratarUsoCristal();
+
+    }
+    
+    /**
+     * Trata a coleta do fruto, caso
+     * um fruto seja coletado, incrementa a
+     * pontuacao.
+    */
+    private void tratarColetaFruto() {
+        if (tentarPegarFruto()) {
             pontuacao += 1;
+            Greenfoot.playSound("fazendeiro_coletando_fruto.wav");
         }
     }
-
+    
+    private void tratarColetaCristal(){
+        if(tentarPegarCristal()){
+            cristais += 1;
+            Greenfoot.playSound("fazendeiro_coletando_fruto.wav");
+        }
+    }
+    
     /**
      * Move o fazendeiro conforme as setas do teclado.
      */
@@ -51,6 +70,19 @@ public class Fazendeiro extends Entidade
         return pontuacao;
     }
     
+    public int obterCristais(){
+        return cristais;
+    }
+    
+    private void tratarUsoCristal(){
+        if(cristais > 0 && "space".equals(Greenfoot.getKey()) && getWorld() != null){
+            cristais -= 1;
+            for(Saci saci: getWorld().getObjects(Saci.class)){
+                saci.aplicarLentidao(600);
+            }
+        }
+    }
+    
     /**
      * Verifica se o jogador e o inimigo se tocaram
      * @return true se encostar no inimigo, false se não encostar
@@ -66,4 +98,5 @@ public class Fazendeiro extends Entidade
     public boolean chegouNaSaida(){
         return isTouching(Saida.class);
     }
+
 }

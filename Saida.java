@@ -1,14 +1,11 @@
 import greenfoot.*;
 /**
- * Write a description of class Saida here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Actor da saida por onde o jogador escapa
  */
 public class Saida extends Actor
 {
     /**
-     * Constructor for objects of class Saida
+     * Constroi a saida com a imagem de um portal
      */
     public Saida()
     {

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=ObstaculoDois
+comment0.text=\r\nClasse\ do\ obstaculo\ que\ serve\ para\ impedir\ o\ caminho\ de\ uma\ entidade\r\n
+comment1.params=
+comment1.target=ObstaculoDois()
+comment1.text=\r\n\ Cria\ um\ obstaculo\ com\ uma\ dada\ imagem\r\n
+numComments=2

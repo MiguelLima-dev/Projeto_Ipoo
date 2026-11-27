@@ -1,28 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Tela here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Eh a superclasse que guarda a informaçao comum a todas as telas do jogo
  */
-public class Tela extends World
+public class Tela extends Mundo
 {
-    // guarda a musica que toca durante as telas do jogo
-    private static GreenfootSound musica = new GreenfootSound("forest-ambience.wav");
+    /**
+     * Constroi uma tela
+     * @param caminhoImagem o arquivo da imagem do fundo
+     */
+    protected Tela(String caminhoImagem)
+    {    
+        super(caminhoImagem, "forest-ambience.wav");
+    }
     
     /**
-     * Constructor for objects of class Tela.
+     * Guarda a ultima tecla pressionada a cada act e faz o que eh
+     * preciso em cada subclasse
      */
-    public Tela(String caminhoImagem)
-    {    
-        super(1200, 900, 1); 
-        // define o plano de fn
-        setBackground(new GreenfootImage(caminhoImagem));
-        // define o volume da musica para 70
-        musica.setVolume(70);
-    }
-
     public void act() {
         String tecla = Greenfoot.getKey();
 
@@ -30,29 +25,14 @@ public class Tela extends World
             tratarTecla(tecla);
         }
     }
-
+    
+    /**
+     * Eh feita para ser sobreescrita pelas subclasses,
+     * deve tratar o uso de botoes para alterar a tela
+     */
     protected void tratarTecla(String tecla) {
-
-    }
-
-    /**
-     * Comeca a tocar a musica quando entra em uma tela
-     */
-    public void started() {
-       musica.playLoop();
-    }
-
-    /**
-     * Pausa a musica para comecar de onde parou depois 
-     */
-    public void stopped() {
-        musica.pause();
-    }
-
-    /**
-     * Para a musica que esta sendo tocada
-     */
-    protected void pararMusica() {
-        musica.stop();
+        if ("space".equals(tecla)) {
+            trocarMundo(new FaseUm());
+        }
     }
 }

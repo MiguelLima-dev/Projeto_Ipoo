@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Mundo
+comment0.text=\r\n\ Superclasse\ dos\ mundos\ do\ jogo(fases\ e\ telas)\r\n
+comment1.params=arquivoFundo\ arquivoMusica
+comment1.target=Mundo(java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Cria\ um\ mundo\ e\ define\ a\ m\u00FAsica\ de\ fundo\r\n
+comment2.params=
+comment2.target=void\ started()
+comment2.text=\r\n\ Garante\ que\ a\ musica\ correta\ esta\ tocando\ quando\ o\ jogador\ inicia\r\n
+comment3.params=
+comment3.target=void\ stopped()
+comment3.text=\r\n\ Pausa\ a\ musica\ quando\ o\ jogador\ pausa\ o\ jogo\r\n
+comment4.params=
+comment4.target=void\ garantirMusicaTocando()
+comment4.text=\r\n\ Garante\ que\ a\ musica\ de\ fundo\ seja\ correta\ e\ esteja\ tocando\r\n
+comment5.params=destino
+comment5.target=void\ trocarMundo(Mundo)
+comment5.text=\r\n\ Troca\ o\ mundo\ atual\ para\ um\ mundo\ destino\r\n\ @param\ destino\ o\ novo\ mundo\r\n
+numComments=6

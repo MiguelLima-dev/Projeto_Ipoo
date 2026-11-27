@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=TelaFinal
+comment0.text=\r\n\ Classe\ da\ tela\ final\ do\ jogo,\ onde\ eh\ exibido\ se\ o\ jogador\ venceu\ ou\ nao.\r\n\ Tambem\ sao\ exibidas\ as\ estatisticas\ de\ pontuacao\ e\ tempo\ ao\ longo\ do\ jogo.\r\n\ Tambm\ da\ a\ op\u00E7ao\ de\ reiniciar\ o\ jogo\ apertando\ espa\u00E7o\r\n
+comment1.params=venceu\ partida
+comment1.target=TelaFinal(boolean,\ Partida)
+comment1.text=\r\n\ Construtor\ da\ tela\ final,\ recebe\ se\ o\ jogador\ venceu\ ou\ nao\ e\ a\r\n\ partida\ com\ as\ estatisticas\ a\ serem\ exibidas\r\n\ @param\ venceu\ se\ o\ jogador\ venceu\ ou\ nao\ o\ jogo\r\n\ @param\ partida\ a\ partida\ com\ as\ estatisticas\r\n
+comment2.params=
+comment2.target=void\ adicionarInstrucao()
+comment2.text=\r\n\ Adiciona\ o\ texto\ com\ a\ instrucao\ de\ como\ jogar\ outra\ partida\r\n
+comment3.params=vitoria
+comment3.target=void\ exibirVitoriaOuDerrota(boolean)
+comment3.text=\r\n\ Exibe\ o\ texto\ com\ vitoria\ ou\ derrota\r\n\ @param\ vitoria\ se\ o\ texto\ exibido\ eh\ vitoria\ ou\ nao\r\n
+comment4.params=partida
+comment4.target=void\ exibirResultados(Partida)
+comment4.text=\r\n\ Exibe\ as\ estatisticas\ de\ pontua\u00E7ao\ e\ minutos\ de\ jogo\ ao\ longo\ da\ partida\r\n\ @param\ partida\ a\ partida\ a\ ser\ analisada\r\n
+numComments=5
