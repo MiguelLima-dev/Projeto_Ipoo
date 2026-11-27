@@ -28,14 +28,16 @@ public class Inimigo extends Entidade
         super.act();
         tocarSomCaptura();
     }
-    
+
     /**
      * Toca o som do inimigo
      */
     protected void tocarSom() {
-        Greenfoot.playSound(arquivoSom);
+        if (arquivoSom != null) {
+            Greenfoot.playSound(arquivoSom);
+        }
     }
-    
+
     /**
      * Move o inimigo em direcao a um alvo (um actor)
      * @param alvo o actor alvo
@@ -68,7 +70,7 @@ public class Inimigo extends Entidade
      */
     private void tocarSomCaptura() {
         if (isTouching(Fazendeiro.class)) {
-            if (arquivoSom != null && !tocouSom) {
+            if (!tocouSom) {
                 tocarSom();
                 tocouSom = true;
             }

@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Espinhos
+comment0.text=\n\ classe\ dos\ espinhos,\ um\ actor\ que\ mata\ o\ jogador\ ou\ causa\ dano\ ao\ chefe,\ caso\n\ encostem\ nele.\n
+comment1.params=
+comment1.target=Espinhos()
+numComments=2
