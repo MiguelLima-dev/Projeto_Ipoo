@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Essa classe eh a primeria fase do jogo, contem tres inimigos e alguns
+ * Essa classe eh a primeria fase do jogo, contem dois sinimigos e alguns
  * frutos coletaveis que renascem.
  * A saida eh aberta depois de um certo tempo
  */
