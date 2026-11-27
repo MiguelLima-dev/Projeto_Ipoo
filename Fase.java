@@ -42,7 +42,7 @@ public class Fase extends Mundo {
         this.jogador = jogador;
         pontuacaoInicialJogador = jogador.obterPontuacao();
         addObject(jogador, JOGADOR_X, JOGADOR_Y);
-        hud = new Hud(jogador.obterPontuacao(), relogio.obterHorario());
+        hud = new Hud(jogador.obterPontuacao(), relogio.obterHorario(), jogador.obterGarrafas(), jogador.obterCristais());
         hud.adicionarAoMundo(this);
         this.partida = partida;
         
@@ -96,7 +96,7 @@ public class Fase extends Mundo {
     /**
      * Retorna se o jogador venceu, o caso padrao eh quando ele
      * chega na saida
-     * @return true se o jogador venceu, false caso contrario
+     * @return true se o jogador venceu, false caso nao
      */
     protected boolean jogadorVenceu() {
         return jogador.chegouNaSaida();
@@ -110,16 +110,22 @@ public class Fase extends Mundo {
         if(relogio.obterMinutosPassados() >= MINUTOS_SAIDA && !saidaAberta){
             addObject(new Texto("SAÍDA LIBERADA!"), getWidth()/2, 50);
             addObject(new Saida(), SAIDA_X, SAIDA_Y);
+            criarCristal();
             saidaAberta = true;
         }
     }
-
+    /**
+     * Cria um cristal a ser coletado pelo jogador
+     */
+    private void criarCristal() {
+        addObject(new Cristal(), 364, 251);
+    }
     /**
      * Retorna se o jogador perdeu o jogo
      * @return true se o jogador perdeu, false caso contrario
      */
     protected boolean jogadorPerdeu() {
-        return jogador.encostouNoInimigo() || tempoSeEsgotou();
+        return jogador.morreu() || tempoSeEsgotou();
     }
 
     /**
@@ -198,7 +204,7 @@ public class Fase extends Mundo {
      * Atualiza o hud
      */
     private void atualizarInfo() {
-        hud.atualizar(jogador.obterPontuacao(), relogio.obterHorario());
+        hud.atualizar(jogador.obterPontuacao(), relogio.obterHorario(), jogador.obterGarrafas(), jogador.obterCristais());
     }
 
     /**
